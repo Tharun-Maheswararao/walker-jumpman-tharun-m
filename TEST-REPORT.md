@@ -219,7 +219,7 @@ taking the high road, one taking the low road.
 
 | # | Step | What actually happened |
 | --- | --- | --- |
-| 1–2 | Original section, Junction, both stones | **Completed the level on the second attempt.** One failed attempt before that. *(Cause of the first failure not recorded at the time — see §7.4.)* |
+| 1–2 | Original section, Junction, both stones | **Completed the level on the second attempt.** The one failed attempt was **"jumped too early"** — left the stone before building the distance. See §7.5: this is the *only* failure mode the geometry permits. |
 | 3 | Painted chevron guide at the fork | **Seen, and it read correctly as "jump here."** |
 | 3 | First attempt at the 48 px Terrace jump | **Did not bonk the underside.** Made it without a failed attempt. **This refutes the prediction in CHANGE-BRIEF failure case D.** |
 | 4 | Terrace spike bank legibility | **Legible at normal running speed.** |
@@ -259,6 +259,28 @@ One UI string. Suites re-run after the change: 25/25, 9/9, 22/22.
 
 This is the third revise cycle and the only one driven by a human at the
 keyboard rather than by a test or a screenshot.
+
+**7.5 The failed attempt was the only failure the geometry allows**
+
+The playtester's single miss was *jumping too early*. That is not incidental.
+At full run speed the furthest the player's centre can travel in one flat jump
+is **112 px**, and for every stone jump the landing window reaches further than
+that from the latest possible take-off:
+
+| Jump | Furthest reachable centre | Landing window ends | Spare |
+| --- | ---: | ---: | ---: |
+| Junction → stone 1 | 1305 | 1329 | **24 px** |
+| Stone 1 → stone 2 | 1441 | 1465 | **24 px** |
+| Stone 2 → ground run | 1577 | 2089 | 512 px |
+
+**A full-commitment jump always lands. Overshooting is impossible.** So the only
+way to miss a stone is to leave early — which is exactly what happened. The
+player is never punished for holding right, only for letting go of the timing.
+
+That was a property of the layout I had not articulated until the playtest
+produced the failure that demonstrates it. It is now asserted by
+`stones-cannot-be-overshot`, so if the geometry ever moves and overshooting
+becomes possible, the suite fails.
 
 ## 8. Camera and presentation
 
@@ -347,8 +369,8 @@ Run from the repository root.
 | --- | ---: | ---: | --- |
 | `test_game.gd` (starter's) | 25 | **0** | One line changed — see below |
 | `test_keyboard.gd` (starter's) | 9 | **0** | Byte-identical to the starter |
-| `test_extension.gd` (mine) | 22 | **0** | New, additive |
-| **Total** | **56** | **0** | |
+| `test_extension.gd` (mine) | 23 | **0** | New, additive |
+| **Total** | **57** | **0** | |
 
 ### What changed in the supplied fixture, and why
 
@@ -382,7 +404,7 @@ fixture change, showing `complete-real-route` FAIL with the player dead at
 `low-road-headroom`, `hazard-art-matches-trigger`, `new-hazard-is-raised`,
 `terrace-spikes-kill`, `terrace-spikes-retry-respawns`, `new-pit-fall-retries`,
 `progress-bar-rescaled`, `high-road-completes`, `low-road-completes`,
-`low-road-is-slower-than-high-road`.
+`low-road-is-slower-than-high-road`, `stones-cannot-be-overshot`.
 
 ## 12. Known limitations and things I am not sure about
 

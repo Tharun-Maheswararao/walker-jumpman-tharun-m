@@ -151,8 +151,8 @@ collision. This came from looking at a screenshot, not from a failing test.
 | --- | ---: | ---: |
 | `tests/test_game.gd` (starter's) | 25 | **0** |
 | `tests/test_keyboard.gd` (starter's, byte-identical) | 9 | **0** |
-| `tests/test_extension.gd` (new) | 22 | **0** |
-| **Total** | **56** | **0** |
+| `tests/test_extension.gd` (new) | 23 | **0** |
+| **Total** | **57** | **0** |
 
 ```bash
 /Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_game.gd

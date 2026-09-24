@@ -60,8 +60,8 @@ and `hazard_triangle()` is now the single definition of a spike's shape, called
 by both the trigger builder and the renderer, so they cannot drift apart again.
 `evidence/screens/bug-before-*.png` are real captures of the defect.
 
-**Verification.** 56 automated checks, 0 failures — the starter's 25 mechanics
-checks, its 9 keyboard checks byte-identical, and 22 new extension checks.
+**Verification.** 57 automated checks, 0 failures — the starter's 25 mechanics
+checks, its 9 keyboard checks byte-identical, and 23 new extension checks.
 Level geometry is designed against a **measured** jump envelope
 (`tools/probe_jump.gd`: real apex 56.0 px, not the textbook 53.3 px), not
 against arithmetic.

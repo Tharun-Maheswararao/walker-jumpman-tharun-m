@@ -16,6 +16,9 @@ const Route = preload("res://tests/route_driver.gd")
 ## Measured on this engine by tools/probe_jump.gd. Paper math says 53.33.
 const MEASURED_APEX_RISE := 56.0
 const MEASURED_MAX_FLAT_GAP := 130.0
+## Furthest the player's centre can travel in one flat jump at full run speed.
+const MEASURED_MAX_FLAT_TRAVEL := 112.0
+const HALF_WIDTH := 9.0
 
 ## The starter's geometry, copied from nikbearbrown/walker-jumpman @9387542.
 ## Section 03 must not have disturbed any of it.
@@ -137,6 +140,35 @@ func run() -> void:
 	check("new-landings-need-jumps", all_jumps and landings.size() >= 2, {"gaps": gaps})
 	check("new-landings-within-measured-envelope", all_reachable,
 		{"gaps": gaps, "measured_max_flat_gap_px": MEASURED_MAX_FLAT_GAP})
+
+	# --- a stone cannot be overshot, so every miss is an early jump ---------
+	# The one failed attempt in the human playtest (TEST-REPORT 7.2) was
+	# "jumped too early". That is not bad luck -- it is the only failure mode
+	# this geometry permits. At full run speed the furthest the centre can
+	# travel in one flat jump is 112px, and for every stone the landing window
+	# reaches further than that from the latest possible take-off. So a
+	# full-commitment jump always lands, and the only way to miss is to leave
+	# early. That is a deliberate property of the layout: the player is never
+	# punished for holding right, only for letting go of the timing. Asserted
+	# here so it stays true if the geometry ever moves.
+	var stone_jumps := [
+		{"name": "junction -> stone-1", "launch_end": 1184.0, "land_end": 1320.0},
+		{"name": "stone-1 -> stone-2", "launch_end": 1320.0, "land_end": 1456.0},
+		{"name": "stone-2 -> ground-run", "launch_end": 1456.0, "land_end": 2080.0},
+	]
+	var no_overshoot := true
+	var overshoot: Array = []
+	for j in stone_jumps:
+		var latest_takeoff: float = float(j["launch_end"]) + HALF_WIDTH
+		var furthest_landing: float = latest_takeoff + MEASURED_MAX_FLAT_TRAVEL
+		var window_end: float = float(j["land_end"]) + HALF_WIDTH
+		if furthest_landing > window_end:
+			no_overshoot = false
+		overshoot.append({"jump": j["name"],
+			"furthest_reachable_centre": furthest_landing,
+			"landing_window_ends": window_end,
+			"spare_px": snappedf(window_end - furthest_landing, 0.01)})
+	check("stones-cannot-be-overshot", no_overshoot, {"jumps": overshoot})
 
 	# --- the terrace is inside the measured jump budget ---------------------
 	var ground_top := 320.0

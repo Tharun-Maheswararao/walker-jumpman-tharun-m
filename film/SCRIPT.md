@@ -90,6 +90,12 @@ Label: `TOOL OUTPUT — NOT GAMEPLAY`.]**
 > Miss, and you fall.
 >
 > That's four new landings already, and none of them can be walked onto.
+>
+> And there's a property of these stones worth knowing. At full speed you
+> cannot overshoot one — the landing window always reaches further than the
+> jump does, by about twenty-four pixels. So committing never kills you. The
+> only way to miss is to leave early. When I played this, that's exactly the
+> one attempt I lost.
 
 **[Continuous live run. No cuts through the stones.]**
 
@@ -181,9 +187,9 @@ timed comparison.]**
 ---
 
 ### Beat 9 — Verdict · 0:25
-> So. Fifty-six automated checks, zero failures: the starter's twenty-five
-> mechanics checks, its nine keyboard checks byte-identical, and twenty-two new
-> ones for the extension.
+> So. Fifty-seven automated checks, zero failures: the starter's twenty-five
+> mechanics checks, its nine keyboard checks byte-identical, and twenty-three
+> new ones for the extension.
 >
 > What I changed in the supplied route fixture, I extended — I didn't weaken it.
 > The original five jump marks are still in there, and the failing run from

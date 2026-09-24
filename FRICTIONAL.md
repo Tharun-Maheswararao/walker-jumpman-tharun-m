@@ -364,4 +364,17 @@ because nothing was broken. It was just wrong.
 to change the label are mine. The AI wrote the one-line change, re-ran the
 suites, and drafted this write-up from the notes I gave it.
 
-**Traceability.** TEST-REPORT §7.2 and §7.4, CHANGE-BRIEF R6, `godot/ui/hud.gd`.
+**One more thing the playtest taught me about my own level.** My single failed
+attempt was *jumping too early*. Chasing that, the AI checked the arithmetic:
+at full speed the centre travels at most 112 px, and every stone's landing
+window reaches 24 px further than that from the latest take-off. **You cannot
+overshoot a stone.** Committing always lands; the only way to miss is to leave
+early. That was true of the layout all along and neither of us had said it out
+loud until my failure demonstrated it. It is now asserted by
+`stones-cannot-be-overshot`, so the property cannot silently disappear.
+
+I like this one because the causation runs the useful way round: the playtest
+did not just find a bug, it explained a design property back to me.
+
+**Traceability.** TEST-REPORT §7.2, §7.4 and §7.5, CHANGE-BRIEF R6,
+`godot/ui/hud.gd`, `stones-cannot-be-overshot` in `godot/tests/test_extension.gd`.

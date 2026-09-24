@@ -358,3 +358,16 @@ decision. Asked whether doubling back on the low road felt like a choice or like
 getting lost, the answer was "it felt like another choice." The automated check
 proves the roads *differ* by 2.28 s; only a person can say that difference feels
 deliberate.
+
+### R7 — 2026-09-24 · A design property I only noticed because the playtest failed
+
+The playtester's one failed attempt was "jumped too early". Checking why, the
+geometry turns out to guarantee it: maximum flat centre travel is 112 px, and
+every stone's landing window reaches 24 px beyond the furthest a jump can
+carry. **Overshooting a stone is impossible; the only way to miss is to leave
+early.**
+
+Nothing in the level changed — this was already true. What changed is that it
+is now stated and asserted (`stones-cannot-be-overshot`) instead of being an
+accident of the numbers I picked. The section punishes bad timing, never
+commitment.
