@@ -67,6 +67,19 @@ func _add_solid(rect: Rect2) -> void:
 	body.add_child(collision)
 	add_child(body)
 
+## The one definition of a spike's shape. _add_area() builds the trigger from
+## it and _draw() paints from it, so the picture and the hit test cannot drift
+## apart. The starter had two copies of this geometry and the drawing copy had
+## y hard-coded to the ground line, which put any raised hazard's art 64px away
+## from its trigger.
+static func hazard_triangle(rect: Rect2, index: int) -> PackedVector2Array:
+	var x: float = rect.position.x + float(index) * rect.size.x / 3.0
+	var base: float = rect.position.y + rect.size.y
+	return PackedVector2Array([
+		Vector2(x, base),
+		Vector2(x + 4, rect.position.y),
+		Vector2(x + 8, base)])
+
 func _add_area(rect: Rect2, layer: int, spikes: bool) -> Area2D:
 	var area := Area2D.new()
 	area.position = rect.position
@@ -74,10 +87,10 @@ func _add_area(rect: Rect2, layer: int, spikes: bool) -> Area2D:
 	area.collision_mask = 2
 	if spikes:
 		# Three exact triangular trigger silhouettes; no oversized invisible box.
+		# Local to area.position, so the rect passed in starts at the origin.
 		for i in range(3):
 			var triangle := CollisionPolygon2D.new()
-			var x := float(i) * rect.size.x / 3.0
-			triangle.polygon = PackedVector2Array([Vector2(x, rect.size.y), Vector2(x + 4, 0), Vector2(x + 8, rect.size.y)])
+			triangle.polygon = hazard_triangle(Rect2(Vector2.ZERO, rect.size), i)
 			area.add_child(triangle)
 	else:
 		var collision := CollisionShape2D.new()
@@ -181,13 +194,18 @@ func _draw() -> void:
 		return
 	var font := ThemeDB.fallback_font
 	var ink := Color("25354a")
+	var width: float = float(level.width)
 	# All visual assets are original Godot vector drawing, not recovered art.
-	draw_rect(Rect2(-400, -200, 1800, 900), Color("f6f3ec"))
-	for x in range(0, 961, 32):
+	# Everything below is sized from the level data. The starter hard-coded a
+	# 1800px backdrop, a 960px grid, three hill positions, the hazard baseline
+	# and the finish pole height, so widening the level alone left the new
+	# ground with no backdrop and drew raised hazards down at the old ground line.
+	draw_rect(Rect2(-400, -200, width + 800, 900), Color("f6f3ec"))
+	for x in range(0, int(width) + 32, 32):
 		draw_line(Vector2(x, 80), Vector2(x, 320), Color("e7e5df"), 1)
 	for y in range(96, 321, 32):
-		draw_line(Vector2(0, y), Vector2(960, y), Color("e7e5df"), 1)
-	for x in [100, 470, 770]:
+		draw_line(Vector2(0, y), Vector2(width, y), Color("e7e5df"), 1)
+	for x in level.hills:
 		draw_colored_polygon(PackedVector2Array([Vector2(x-90,320),Vector2(x+50,180),Vector2(x+190,320)]), Color("e4e8e3"))
 	for entry in level.solids:
 		var r := Rect2(entry[0], entry[1], entry[2], entry[3])
@@ -196,13 +214,19 @@ func _draw() -> void:
 		for x in range(int(r.position.x)+12, int(r.end.x), 24):
 			draw_line(Vector2(x, r.position.y+12), Vector2(x+7, r.position.y+19), Color("405166"), 1)
 	for entry in level.hazards:
+		var hazard := Rect2(entry[0], entry[1], entry[2], entry[3])
 		for i in range(3):
-			var x: float = entry[0] + i*8
-			draw_colored_polygon(PackedVector2Array([Vector2(x,320),Vector2(x+4,304),Vector2(x+8,320)]), Color("d24e42"))
-	var finish_x: float = level.finish[0]
-	draw_line(Vector2(finish_x+3, 320), Vector2(finish_x+3, 250), ink, 3)
-	draw_colored_polygon(PackedVector2Array([Vector2(finish_x+5,250),Vector2(finish_x+32,260),Vector2(finish_x+5,274)]), Color("287c68"))
-	draw_string(font, Vector2(33, 251), "01 / GET MOVING", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
-	draw_string(font, Vector2(33, 273), "Read the landing. Then jump.", HORIZONTAL_ALIGNMENT_LEFT, -1, 13, ink)
-	draw_string(font, Vector2(474, 227), "02 / MIND THE GAP", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
-	draw_string(font, Vector2(878, 225), "FINISH", HORIZONTAL_ALIGNMENT_LEFT, -1, 15, ink)
+			draw_colored_polygon(hazard_triangle(hazard, i), Color("d24e42"))
+	# Finish marker drawn from the goal rect, so the pole stands exactly as tall
+	# as the trigger the player actually has to touch.
+	var f: Array = level.finish
+	var finish_x: float = f[0]
+	var finish_top: float = f[1]
+	var finish_base: float = float(f[1]) + float(f[3])
+	draw_line(Vector2(finish_x+3, finish_base), Vector2(finish_x+3, finish_top), ink, 3)
+	draw_colored_polygon(PackedVector2Array([
+		Vector2(finish_x+5, finish_top),
+		Vector2(finish_x+32, finish_top+10),
+		Vector2(finish_x+5, finish_top+24)]), Color("287c68"))
+	for entry in level.labels:
+		draw_string(font, Vector2(entry[0], entry[1]), entry[3], HORIZONTAL_ALIGNMENT_LEFT, -1, int(entry[2]), ink)

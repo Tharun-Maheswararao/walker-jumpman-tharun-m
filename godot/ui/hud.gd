@@ -18,10 +18,17 @@ func _draw() -> void:
 		return
 	draw_rect(Rect2(0,0,640,74), Color("f6f3ec"))
 	text_at("WALKER / JUMPMAN", Vector2(22,27), 18)
-	text_at("FIRST STEPS", Vector2(497,27), 14)
+	# Title and progress both come from the level data. The starter divided by a
+	# hard-coded 852 (old finish 916 minus spawn 64), so moving the flag left the
+	# bar reading 100% less than half way through the course.
+	var level_title: String = str(game.level.title).to_upper()
+	var level_title_width := ThemeDB.fallback_font.get_string_size(level_title, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
+	text_at(level_title, Vector2(618 - level_title_width, 27), 14)
 	text_at("A/D or arrows: move     Space: jump     R: retry     Esc: pause", Vector2(22,50), 13)
 	draw_rect(Rect2(22,63,596,3), Color("daddd6"))
-	var progress: float = clampf((game.player.position.x-64)/852, 0, 1)
+	var start_x: float = float(game.level.spawn[0])
+	var finish_x: float = float(game.level.finish[0])
+	var progress: float = clampf((game.player.position.x-start_x)/maxf(finish_x-start_x, 1.0), 0, 1)
 	draw_rect(Rect2(22,63,596*progress,3), Color("287c68"))
 	draw_rect(Rect2(0,335,640,25), Color("f6f3ec"))
 	text_at("No lives. Just another try.", Vector2(22,353), 13)
@@ -37,7 +44,7 @@ func _draw() -> void:
 	draw_rect(Rect2(163,103,318,159), Color("fffdf7"))
 	draw_rect(Rect2(163,103,318,4), Color("ef875f"))
 	var title := "First steps. Real jumps."
-	var detail := "Cross two gaps. Clear the spikes. Reach the flag."
+	var detail := "Cross the gaps. Pick a road. Reach the flag."
 	var button := "ENTER  /  START"
 	if game.state == game.State.PAUSED:
 		title = "Take a breath."

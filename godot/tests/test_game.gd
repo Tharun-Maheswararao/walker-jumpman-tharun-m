@@ -126,9 +126,14 @@ func run() -> void:
 	await steps(1)
 	check("fall-boundary", game.state == Game.State.DYING, {"state":game.state})
 	await fresh()
+	# Budget raised 900 -> 1500 ticks only because the course is now 2040px
+	# instead of 960px. At the unchanged 160px/s that is 738 ticks of running
+	# before a single jump arc is counted; 900 could not fit the course at any
+	# skill level. The assertion itself is unchanged: still COMPLETE, still zero
+	# deaths, still driven entirely by scripted input.
 	var route = Route.new()
 	var route_ticks := 0
-	while game.state == Game.State.PLAYING and route_ticks < 900:
+	while game.state == Game.State.PLAYING and route_ticks < 1500:
 		route.step(game.player)
 		await steps(1)
 		route_ticks += 1
