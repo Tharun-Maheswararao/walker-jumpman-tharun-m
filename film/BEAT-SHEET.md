@@ -51,7 +51,7 @@ These are constraints on the edit, not decoration.
 | # | Beat | Duration | Visual | Label |
 | --- | --- | --- | --- | --- |
 | 0 | Walker opening | ~0:12 | Skill template | — |
-| 1 | What this is | 0:20 | Split: starter running at `8c9085d` / this build at `b3b4d19`, same opening seconds | `STARTER 9387542` vs `b3b4d19` |
+| 1 | What this is | 0:20 | Split: starter running at `8c9085d` / this build at `e138323`, same opening seconds | `STARTER 9387542` vs `e138323` |
 | 2 | The character | 0:30 | Live play in the original section, then cut to the contact sheet with the collider overlay | `TOOL OUTPUT — NOT GAMEPLAY` on the sheet |
 | 3 | Designing against measured physics | 0:25 | `probe_jump.gd` terminal output; envelope table as a lower third | `TOOL OUTPUT — NOT GAMEPLAY` |
 | 4 | The new section | 0:35 | Continuous live run: Junction → stone → stone → ground run | — |

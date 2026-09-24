@@ -23,7 +23,7 @@ and are not spoken.
 ### Beat 1 — What this is · 0:20
 > This is walker-jumpman, Nik Bear Brown's First Steps starter, in Godot
 > 4.7.2. On the left, the instructor's original at commit 9-3-8-7-5-4-2. On the
-> right, my extension at b-3-b-4-d-1-9.
+> right, my extension at e-1-3-8-3-2-3.
 >
 > Two things changed. The character is new. And the course is roughly twice as
 > long, with a fork in it, and the flag moved behind the new section so you

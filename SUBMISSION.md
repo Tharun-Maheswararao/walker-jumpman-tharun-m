@@ -19,7 +19,7 @@
 | **Final film filename** | ⬜ *pending render* |
 | **Final film SHA-256** | ⬜ *pending render* |
 
-**Revision relationship.** The film demonstrates game source `b3b4d19`. Any
+**Revision relationship.** The film demonstrates game source `e138323`. Any
 commits after it add film documentation only and **do not change the
 demonstrated game source**. Verify with:
 
