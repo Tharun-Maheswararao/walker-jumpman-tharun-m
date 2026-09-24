@@ -4,7 +4,7 @@
 `godot-waikthrough` walker workflow. Permitted by the assignment and disclosed
 in the film's credits, README.md and SOURCES.md.
 
-**Revision demonstrated:** `b3b4d19`
+**Revision demonstrated:** `e138323`
 **Target:** ~3:30, landscape, native 4K.
 
 Read at a measured pace. Every factual claim below is checkable against a
@@ -32,7 +32,7 @@ and are not spoken.
 > Everything else — the controls, the jump, the collider, the retry loop — is
 > the starter's, untouched.
 
-**[Split screen. Lower third: `STARTER 9387542` / `THIS BUILD b3b4d19`.]**
+**[Split screen. Lower third: `STARTER 9387542` / `THIS BUILD e138323`.]**
 
 ---
 
@@ -223,7 +223,7 @@ timed comparison.]**
 *(skill template, then the credits card)*
 
 > Starter: walker-jumpman by Nik Bear Brown, commit 9-3-8-7-5-4-2. This
-> extension: revision b-3-b-4-d-1-9, Godot 4.7.2.
+> extension: revision e-1-3-8-3-2-3, Godot 4.7.2.
 >
 > I set the direction, chose the character concept, and I'm accountable for
 > this submission. Claude Code wrote effectively all of the GDScript, the

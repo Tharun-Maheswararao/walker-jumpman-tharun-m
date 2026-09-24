@@ -6,7 +6,7 @@
 quality checks
 **Target duration:** ~3:30. Duration follows the explanation; there is no
 runtime to fill.
-**Game-source revision demonstrated:** `b3b4d19`
+**Game-source revision to demonstrate:** `e138323` (the final game-source revision; later commits are documentation only)
 
 > **Status: not yet rendered.** The Brutalist skill is not present in this
 > checkout; the course-provided version has been requested. This document and
@@ -32,7 +32,7 @@ runtime to fill.
 These are constraints on the edit, not decoration.
 
 1. **Every gameplay frame is the real game** running the committed source at
-   revision `b3b4d19`. Nothing is re-enacted, re-created, or mocked up.
+   revision `e138323`. Nothing is re-enacted, re-created, or mocked up.
 2. **On-screen labels are mandatory** for anything that is not live human play:
    * `SCRIPTED INPUT` — footage driven by `tests/route_driver.gd`
    * `HELD FRAME` — any frozen frame held for narration
@@ -109,7 +109,7 @@ finish pole drawn from the old ground baseline, spearing through the terrace.
 
 ## Attribution card (beat 11, on screen and read aloud)
 
-* **Revision demonstrated:** `b3b4d19`. Starter: `nikbearbrown/walker-jumpman`
+* **Revision demonstrated:** `e138323`. Starter: `nikbearbrown/walker-jumpman`
   @ `9387542`, Godot 4.7.2.
 * **Human (Tharun Maheswararao):** direction and scope; chose the character
   concept; chose the film approach; owns the submission and the explanation.

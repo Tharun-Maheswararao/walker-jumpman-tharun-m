@@ -5,7 +5,7 @@
 **Engine:** Godot `4.7.2.stable.official.ed1daf0bf` — the exact build string the
 starter records as its tested engine.
 **Host:** macOS 15.6 (Darwin 24.6.0), Apple M4, OpenGL Compatibility renderer.
-**Source revision under test:** `b3b4d19` (see the revision table at the bottom).
+**Source revision under test:** `e138323` (see the revision table at the bottom).
 
 > **What this document is and is not.** Everything below marked *machine* is a
 > real run of the real engine whose raw output is committed under `evidence/`.
@@ -377,4 +377,5 @@ fixture change, showing `complete-real-route` FAIL with the player dead at
 | `8c9085d` | That starter imported here unmodified, as the baseline commit |
 | `76f2938` | SPROCKET character |
 | `394bd91` | Section 03 The Fork, data-driven drawing, route fixture |
-| `b3b4d19` | Launch guide and label revision — **the revision this report describes** |
+| `b3b4d19` | Launch guide and label revision |
+| `e138323` | Stale comment corrected — **the final game-source revision, and the one this report describes** |
