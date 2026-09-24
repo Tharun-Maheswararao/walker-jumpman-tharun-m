@@ -213,6 +213,17 @@ func _draw() -> void:
 		draw_rect(Rect2(r.position, Vector2(r.size.x, 4)), Color("438e7d"))
 		for x in range(int(r.position.x)+12, int(r.end.x), 24):
 			draw_line(Vector2(x, r.position.y+12), Vector2(x+7, r.position.y+19), Color("405166"), 1)
+	# Painted launch guides. No collision: these are floor markings that tell the
+	# player where a jump has to start. The one on the ground run is placed over
+	# the measured take-off window for the 48px Terrace jump (tools/probe_jump.gd),
+	# so the paint and the physics describe the same window. Without it the
+	# natural thing to do is run up under the Terrace and jump, which bonks.
+	for entry in level.guides:
+		var guide := Rect2(entry[0], entry[1], entry[2], entry[3])
+		draw_rect(guide, Color(0.157, 0.486, 0.408, 0.20))
+		for x in range(int(guide.position.x), int(guide.end.x), 10):
+			draw_line(Vector2(x, guide.end.y), Vector2(x + 5, guide.position.y), Color(0.157, 0.486, 0.408, 0.75), 1.5)
+			draw_line(Vector2(x + 5, guide.position.y), Vector2(x + 10, guide.end.y), Color(0.157, 0.486, 0.408, 0.75), 1.5)
 	for entry in level.hazards:
 		var hazard := Rect2(entry[0], entry[1], entry[2], entry[3])
 		for i in range(3):

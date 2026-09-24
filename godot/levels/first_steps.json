@@ -25,14 +25,17 @@
   ],
   "finish": [1824, 216, 24, 56],
   "hills": [100, 470, 770, 1110, 1450, 1790, 2080],
+  "guides": [
+    [1580, 320, 40, 12]
+  ],
   "labels": [
     [33, 251, 15, "01 / GET MOVING"],
     [33, 273, 13, "Read the landing. Then jump."],
     [474, 227, 15, "02 / MIND THE GAP"],
     [1030, 251, 15, "03 / THE FORK"],
     [1030, 273, 13, "Two stones. Then pick a road."],
-    [1536, 244, 13, "HIGH ROAD  -  direct, but spiked"],
-    [1536, 308, 13, "LOW ROAD  -  safe, the long way round"],
+    [1590, 242, 13, "HIGH ROAD  /  direct, but spiked"],
+    [1640, 308, 13, "LOW ROAD  /  safe, but longer"],
     [1802, 205, 15, "FINISH"]
   ]
 }
