@@ -1,0 +1,285 @@
+{
+  "airborne_ticks": 42,
+  "arc_samples": [
+    {
+      "dx": 2.66714477539062,
+      "rise": 5.33432006835938,
+      "tick": 1
+    },
+    {
+      "dx": 5.33380126953125,
+      "rise": 10.4010009765625,
+      "tick": 2
+    },
+    {
+      "dx": 8.00045776367188,
+      "rise": 15.2009887695312,
+      "tick": 3
+    },
+    {
+      "dx": 10.6671142578125,
+      "rise": 19.7343139648438,
+      "tick": 4
+    },
+    {
+      "dx": 13.3337707519531,
+      "rise": 24.0009765625,
+      "tick": 5
+    },
+    {
+      "dx": 16.0004272460938,
+      "rise": 28.0009765625,
+      "tick": 6
+    },
+    {
+      "dx": 18.6670837402344,
+      "rise": 31.7343139648438,
+      "tick": 7
+    },
+    {
+      "dx": 21.333740234375,
+      "rise": 35.2009887695312,
+      "tick": 8
+    },
+    {
+      "dx": 24.0003967285156,
+      "rise": 38.4010009765625,
+      "tick": 9
+    },
+    {
+      "dx": 26.6670532226562,
+      "rise": 41.3343200683594,
+      "tick": 10
+    },
+    {
+      "dx": 29.3337097167969,
+      "rise": 44.0009765625,
+      "tick": 11
+    },
+    {
+      "dx": 32.0003662109375,
+      "rise": 46.4009704589844,
+      "tick": 12
+    },
+    {
+      "dx": 34.6670227050781,
+      "rise": 48.5343017578125,
+      "tick": 13
+    },
+    {
+      "dx": 37.3336791992188,
+      "rise": 50.4009704589844,
+      "tick": 14
+    },
+    {
+      "dx": 40.0003356933594,
+      "rise": 52.0009765625,
+      "tick": 15
+    },
+    {
+      "dx": 42.6669921875,
+      "rise": 53.3343200683594,
+      "tick": 16
+    },
+    {
+      "dx": 45.3336486816406,
+      "rise": 54.4010009765625,
+      "tick": 17
+    },
+    {
+      "dx": 48.0003051757812,
+      "rise": 55.2009887695312,
+      "tick": 18
+    },
+    {
+      "dx": 50.6669616699219,
+      "rise": 55.7343139648438,
+      "tick": 19
+    },
+    {
+      "dx": 53.3336181640625,
+      "rise": 56.0009765625,
+      "tick": 20
+    },
+    {
+      "dx": 56.0002746582031,
+      "rise": 56.0009765625,
+      "tick": 21
+    },
+    {
+      "dx": 58.6669311523438,
+      "rise": 55.7343139648438,
+      "tick": 22
+    },
+    {
+      "dx": 61.3335876464844,
+      "rise": 55.2009887695312,
+      "tick": 23
+    },
+    {
+      "dx": 64.000244140625,
+      "rise": 54.4010009765625,
+      "tick": 24
+    },
+    {
+      "dx": 66.6669006347656,
+      "rise": 53.3343200683594,
+      "tick": 25
+    },
+    {
+      "dx": 69.3335571289062,
+      "rise": 52.0009765625,
+      "tick": 26
+    },
+    {
+      "dx": 72.0002136230469,
+      "rise": 50.4009704589844,
+      "tick": 27
+    },
+    {
+      "dx": 74.6668701171875,
+      "rise": 48.5343017578125,
+      "tick": 28
+    },
+    {
+      "dx": 77.3335266113281,
+      "rise": 46.4009704589844,
+      "tick": 29
+    },
+    {
+      "dx": 80.0001831054688,
+      "rise": 44.0009765625,
+      "tick": 30
+    },
+    {
+      "dx": 82.6668395996094,
+      "rise": 41.3343200683594,
+      "tick": 31
+    },
+    {
+      "dx": 85.33349609375,
+      "rise": 38.4010009765625,
+      "tick": 32
+    },
+    {
+      "dx": 88.0001525878906,
+      "rise": 35.2009887695312,
+      "tick": 33
+    },
+    {
+      "dx": 90.6668090820312,
+      "rise": 31.7343139648438,
+      "tick": 34
+    },
+    {
+      "dx": 93.3334655761719,
+      "rise": 28.0009765625,
+      "tick": 35
+    },
+    {
+      "dx": 96.0001220703125,
+      "rise": 24.0009765625,
+      "tick": 36
+    },
+    {
+      "dx": 98.6667785644531,
+      "rise": 19.7343139648438,
+      "tick": 37
+    },
+    {
+      "dx": 101.333435058594,
+      "rise": 15.2009887695312,
+      "tick": 38
+    },
+    {
+      "dx": 104.000091552734,
+      "rise": 10.4010009765625,
+      "tick": 39
+    },
+    {
+      "dx": 106.666748046875,
+      "rise": 5.33432006835938,
+      "tick": 40
+    },
+    {
+      "dx": 109.333404541016,
+      "rise": 0.0009765625,
+      "tick": 41
+    },
+    {
+      "dx": 112.000061035156,
+      "rise": 0.00006103515625,
+      "tick": 42
+    }
+  ],
+  "collider_height_px": 28.0,
+  "created_at": "2026-09-24T20:03:10",
+  "engine": "4.7.2-stable (official)",
+  "envelope": [
+    {
+      "landing_rise_px": 0.0,
+      "max_centre_travel_px": 112.0,
+      "max_edge_to_edge_gap_px": 130.0,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 8.0,
+      "max_centre_travel_px": 104.0,
+      "max_edge_to_edge_gap_px": 122.0,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 16.0,
+      "max_centre_travel_px": 98.67,
+      "max_edge_to_edge_gap_px": 116.67,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 24.0,
+      "max_centre_travel_px": 96.0,
+      "max_edge_to_edge_gap_px": 114.0,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 32.0,
+      "max_centre_travel_px": 88.0,
+      "max_edge_to_edge_gap_px": 106.0,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 40.0,
+      "max_centre_travel_px": 82.67,
+      "max_edge_to_edge_gap_px": 100.67,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 44.0,
+      "max_centre_travel_px": 80.0,
+      "max_edge_to_edge_gap_px": 98.0,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 48.0,
+      "max_centre_travel_px": 74.67,
+      "max_edge_to_edge_gap_px": 92.67,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 52.0,
+      "max_centre_travel_px": 69.33,
+      "max_edge_to_edge_gap_px": 87.33,
+      "reachable": true
+    },
+    {
+      "landing_rise_px": 56.0,
+      "max_centre_travel_px": 56.0,
+      "max_edge_to_edge_gap_px": 74.0,
+      "reachable": true
+    }
+  ],
+  "jumping_head_reach_px": 84.0009765625,
+  "measured_apex_rise_px": 56.0009765625,
+  "paper_apex_rise_px": 53.3333,
+  "scope": "Measured jump envelope of the unmodified player physics. Flat runway, full run speed, no obstacles.",
+  "steady_run_speed_px_s": 160.0
+}
