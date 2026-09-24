@@ -5,7 +5,7 @@
 **Engine:** Godot `4.7.2.stable.official.ed1daf0bf` — the exact build string the
 starter records as its tested engine.
 **Host:** macOS 15.6 (Darwin 24.6.0), Apple M4, OpenGL Compatibility renderer.
-**Source revision under test:** `e138323` (see the revision table at the bottom).
+**Source revision under test:** `67eebe3` (see the revision table at the bottom).
 
 > **What this document is and is not.** Everything below marked *machine* is a
 > real run of the real engine whose raw output is committed under `evidence/`.
@@ -212,7 +212,7 @@ should have happened.
    free jump on resume.
 8. Complete the level. Press Enter to play again.
 
-**7.2 Results — executed 2026-09-24, revision `e138323`, by me (Tharun).**
+**7.2 Results — executed 2026-09-24, revision `67eebe3`, by me (Tharun).**
 
 Played with a real keyboard on the build in this repository. Two runs: one
 taking the high road, one taking the low road.
@@ -425,4 +425,5 @@ fixture change, showing `complete-real-route` FAIL with the player dead at
 | `76f2938` | SPROCKET character |
 | `394bd91` | Section 03 The Fork, data-driven drawing, route fixture |
 | `b3b4d19` | Launch guide and label revision |
-| `e138323` | Stale comment corrected — **the final game-source revision, and the one this report describes** |
+| `e138323` | Stale comment corrected |
+| `67eebe3` | Playtest: R relabelled, prediction D refuted — **the final game-source revision, and the one this report describes** |

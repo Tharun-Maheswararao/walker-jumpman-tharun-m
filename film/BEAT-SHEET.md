@@ -6,7 +6,7 @@
 quality checks
 **Target duration:** ~3:30. Duration follows the explanation; there is no
 runtime to fill.
-**Game-source revision to demonstrate:** `e138323` (the final game-source revision; later commits are documentation only)
+**Game-source revision to demonstrate:** `67eebe3` (the final game-source revision; later commits are documentation only)
 
 > **Status: not yet rendered.** The Brutalist skill is not present in this
 > checkout; the course-provided version has been requested. This document and
@@ -32,7 +32,7 @@ runtime to fill.
 These are constraints on the edit, not decoration.
 
 1. **Every gameplay frame is the real game** running the committed source at
-   revision `e138323`. Nothing is re-enacted, re-created, or mocked up.
+   revision `67eebe3`. Nothing is re-enacted, re-created, or mocked up.
 2. **On-screen labels are mandatory** for anything that is not live human play:
    * `SCRIPTED INPUT` — footage driven by `tests/route_driver.gd`
    * `HELD FRAME` — any frozen frame held for narration
@@ -51,7 +51,7 @@ These are constraints on the edit, not decoration.
 | # | Beat | Duration | Visual | Label |
 | --- | --- | --- | --- | --- |
 | 0 | Walker opening | ~0:12 | Skill template | — |
-| 1 | What this is | 0:20 | Split: starter running at `8c9085d` / this build at `e138323`, same opening seconds | `STARTER 9387542` vs `e138323` |
+| 1 | What this is | 0:20 | Split: starter running at `8c9085d` / this build at `67eebe3`, same opening seconds | `STARTER 9387542` vs `67eebe3` |
 | 2 | The character | 0:30 | Live play in the original section, then cut to the contact sheet with the collider overlay | `TOOL OUTPUT — NOT GAMEPLAY` on the sheet |
 | 3 | Designing against measured physics | 0:25 | `probe_jump.gd` terminal output; envelope table as a lower third | `TOOL OUTPUT — NOT GAMEPLAY` |
 | 4 | The new section | 0:35 | Continuous live run: Junction → stone → stone → ground run | — |
@@ -109,7 +109,7 @@ finish pole drawn from the old ground baseline, spearing through the terrace.
 
 ## Attribution card (beat 11, on screen and read aloud)
 
-* **Revision demonstrated:** `e138323`. Starter: `nikbearbrown/walker-jumpman`
+* **Revision demonstrated:** `67eebe3`. Starter: `nikbearbrown/walker-jumpman`
   @ `9387542`, Godot 4.7.2.
 * **Human (Tharun Maheswararao):** direction and scope; chose the character
   concept; chose the film approach; owns the submission and the explanation.

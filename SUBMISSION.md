@@ -12,19 +12,19 @@
 | --- | --- |
 | **GitHub repository/folder URL** | ⬜ *fill in after pushing* |
 | **Submitted commit SHA** | ⬜ *fill in — this is the final commit, and by definition cannot be written inside itself. Put the real SHA in the Canvas note.* |
-| **Game-source revision to be shown in the film** | `e138323` — *Correct a stale course width in the route-budget comment*. This is the **final game-source revision**; every commit after it is documentation only and must not touch `godot/`. |
+| **Game-source revision to be shown in the film** | `67eebe3` — *Correct a stale course width in the route-budget comment*. This is the **final game-source revision**; every commit after it is documentation only and must not touch `godot/`. |
 | **Godot version** | `4.7.2.stable.official.ed1daf0bf` |
 | **Operating system** | macOS 15.6 (Darwin 24.6.0), Apple M4 |
 | **Final film URL** | ⬜ *pending render — see "Film status" below* |
 | **Final film filename** | ⬜ *pending render* |
 | **Final film SHA-256** | ⬜ *pending render* |
 
-**Revision relationship.** The film demonstrates game source `e138323`. Any
+**Revision relationship.** The film demonstrates game source `67eebe3`. Any
 commits after it add film documentation only and **do not change the
 demonstrated game source**. Verify with:
 
 ```bash
-git diff --stat e138323 <submitted-sha> -- godot/
+git diff --stat 67eebe3 <submitted-sha> -- godot/
 ```
 
 That command must report no changes under `godot/`. If it reports changes, the
