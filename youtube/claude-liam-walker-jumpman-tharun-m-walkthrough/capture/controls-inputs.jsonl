@@ -1,0 +1,18 @@
+{"capture": "Godot Movie Maker (--write-movie --fixed-fps 30), deterministic offline render of the real viewport at 3840x2160", "clip": "controls", "deaths": 0, "elapsed_s": 1.3, "engine": "4.7.2-stable (official)", "final_state": 0, "fps": 30, "frames": 211, "input_method": "real Input singleton: Input.action_press/action_release plus parsed InputEventKey; test_control is false", "no_state_writes": true, "no_teleport": true}
+{"edge": "tap", "frame": 8, "input": "Enter", "seconds": 0.267}
+{"edge": "press", "frame": 8, "input": "move_right", "seconds": 0.267}
+{"event": "reached x=138 (first gap lip)", "frame": 24, "on_floor": true, "seconds": 0.8, "x": 140.6, "y": 319.9}
+{"edge": "press", "frame": 38, "input": "jump", "seconds": 1.267}
+{"edge": "release", "frame": 40, "input": "jump", "seconds": 1.333}
+{"edge": "tap", "frame": 52, "input": "Escape", "seconds": 1.733}
+{"event": "Escape pressed mid-jump: state=2, y frozen at 264.00", "frame": 52, "seconds": 1.733}
+{"event": "still frozen after 45 frames: y=264.00 (delta 0.0000)", "frame": 97, "seconds": 3.233}
+{"edge": "tap", "frame": 101, "input": "Enter", "seconds": 3.367}
+{"event": "Enter resumed: state=1, jumps=1 (no free jump granted)", "frame": 101, "seconds": 3.367}
+{"edge": "release", "frame": 113, "input": "move_right", "seconds": 3.767}
+{"event": "before R: x=278.2 deaths=0", "frame": 119, "seconds": 3.967}
+{"edge": "tap", "frame": 123, "input": "R", "seconds": 4.1}
+{"event": "after  R: x=64.0 deaths=0 (unchanged: a manual restart is not a death)", "frame": 123, "seconds": 4.1}
+{"edge": "tap", "frame": 162, "input": "Escape", "seconds": 5.4}
+{"edge": "tap", "frame": 166, "input": "M", "seconds": 5.533}
+{"event": "M returned to the main menu: state=0", "frame": 166, "seconds": 5.533}

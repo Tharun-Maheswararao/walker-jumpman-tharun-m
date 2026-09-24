@@ -1,0 +1,38 @@
+{"capture": "Godot Movie Maker (--write-movie --fixed-fps 30), deterministic offline render of the real viewport at 3840x2160", "clip": "high-road", "deaths": 0, "elapsed_s": 11.2500000000001, "engine": "4.7.2-stable (official)", "final_state": 4, "fps": 30, "frames": 412, "input_method": "real Input singleton: Input.action_press/action_release plus parsed InputEventKey; test_control is false", "no_state_writes": true, "no_teleport": true}
+{"edge": "tap", "frame": 8, "input": "Enter", "seconds": 0.267}
+{"event": "HIGH ROAD, real Input actions, no teleports", "frame": 8, "seconds": 0.267}
+{"edge": "press", "frame": 8, "input": "move_right", "seconds": 0.267}
+{"event": "reached x=138 (first gap lip)", "frame": 24, "on_floor": true, "seconds": 0.8, "x": 140.6, "y": 319.9}
+{"edge": "press", "frame": 24, "input": "jump", "seconds": 0.8}
+{"edge": "release", "frame": 25, "input": "jump", "seconds": 0.833}
+{"edge": "press", "frame": 53, "input": "jump", "seconds": 1.767}
+{"edge": "release", "frame": 54, "input": "jump", "seconds": 1.8}
+{"event": "reached x=330 (original spike)", "frame": 60, "on_floor": false, "seconds": 2.0, "x": 332.6, "y": 269.5}
+{"edge": "press", "frame": 78, "input": "jump", "seconds": 2.6}
+{"edge": "release", "frame": 79, "input": "jump", "seconds": 2.633}
+{"edge": "press", "frame": 101, "input": "jump", "seconds": 3.367}
+{"edge": "release", "frame": 102, "input": "jump", "seconds": 3.4}
+{"event": "reached x=600 (second ledge)", "frame": 113, "on_floor": false, "seconds": 3.767, "x": 603.5, "y": 265.5}
+{"edge": "press", "frame": 134, "input": "jump", "seconds": 4.467}
+{"edge": "release", "frame": 135, "input": "jump", "seconds": 4.5}
+{"edge": "press", "frame": 178, "input": "jump", "seconds": 5.933}
+{"edge": "release", "frame": 179, "input": "jump", "seconds": 5.967}
+{"event": "reached x=1024 (The Junction)", "frame": 192, "on_floor": false, "seconds": 6.4, "x": 1024.9, "y": 271.4}
+{"edge": "press", "frame": 220, "input": "jump", "seconds": 7.333}
+{"edge": "release", "frame": 221, "input": "jump", "seconds": 7.367}
+{"event": "reached x=1256 (stepping stone 1)", "frame": 236, "on_floor": false, "seconds": 7.867, "x": 1259.5, "y": 281.5}
+{"edge": "press", "frame": 245, "input": "jump", "seconds": 8.167}
+{"edge": "release", "frame": 246, "input": "jump", "seconds": 8.2}
+{"event": "reached x=1392 (stepping stone 2)", "frame": 261, "on_floor": false, "seconds": 8.7, "x": 1392.9, "y": 281.5}
+{"edge": "press", "frame": 271, "input": "jump", "seconds": 9.033}
+{"edge": "release", "frame": 272, "input": "jump", "seconds": 9.067}
+{"event": "reached x=1520 (ground run)", "frame": 285, "on_floor": false, "seconds": 9.5, "x": 1520.9, "y": 271.4}
+{"event": "reached x=1596 (launch guide)", "frame": 300, "on_floor": true, "seconds": 10.0, "x": 1600.9, "y": 319.9}
+{"edge": "press", "frame": 300, "input": "jump", "seconds": 10.0}
+{"edge": "release", "frame": 301, "input": "jump", "seconds": 10.033}
+{"event": "reached x=1664 (terrace near edge)", "frame": 312, "on_floor": false, "seconds": 10.4, "x": 1664.9, "y": 265.5}
+{"edge": "press", "frame": 327, "input": "jump", "seconds": 10.9}
+{"edge": "release", "frame": 328, "input": "jump", "seconds": 10.933}
+{"event": "reached x=1760 (terrace spike bank)", "frame": 330, "on_floor": false, "seconds": 11.0, "x": 1760.9, "y": 243.9}
+{"event": "COMPLETE at x=1822.2", "frame": 342, "seconds": 11.4}
+{"edge": "release", "frame": 342, "input": "move_right", "seconds": 11.4}

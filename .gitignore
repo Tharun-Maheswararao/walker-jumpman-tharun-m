@@ -22,3 +22,11 @@ credentials/
 *.pfx
 
 # Git cannot ignore by size: inspect staged files before committing (>25 MB).
+
+# Film captures and renders: real 4K gameplay, far over the 25MB limit.
+# The reel's documents, coverage contract and input logs ARE tracked.
+youtube/**/capture/*.mp4
+youtube/**/media/
+youtube/**/audio/
+youtube/**/exports/
+evidence/film/
