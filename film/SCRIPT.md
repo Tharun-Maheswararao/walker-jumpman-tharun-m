@@ -4,7 +4,7 @@
 `godot-waikthrough` walker workflow. Permitted by the assignment and disclosed
 in the film's credits, README.md and SOURCES.md.
 
-**Revision demonstrated:** `67eebe3`
+**Revision demonstrated:** `5bdd71e`
 **Target:** ~3:30, landscape, native 4K.
 
 Read at a measured pace. Every factual claim below is checkable against a
@@ -23,7 +23,7 @@ and are not spoken.
 ### Beat 1 — What this is · 0:20
 > This is walker-jumpman, Nik Bear Brown's First Steps starter, in Godot
 > 4.7.2. On the left, the instructor's original at commit 9-3-8-7-5-4-2. On the
-> right, my extension at 6-7-e-e-b-e-3.
+> right, my extension at 5-b-d-d-7-1-e.
 >
 > Two things changed. The character is new. And the course is roughly twice as
 > long, with a fork in it, and the flag moved behind the new section so you
@@ -32,7 +32,7 @@ and are not spoken.
 > Everything else — the controls, the jump, the collider, the retry loop — is
 > the starter's, untouched.
 
-**[Split screen. Lower third: `STARTER 9387542` / `THIS BUILD 67eebe3`.]**
+**[Split screen. Lower third: `STARTER 9387542` / `THIS BUILD 5bdd71e`.]**
 
 ---
 
@@ -234,7 +234,7 @@ timed comparison.]**
 *(skill template, then the credits card)*
 
 > Starter: walker-jumpman by Nik Bear Brown, commit 9-3-8-7-5-4-2. This
-> extension: revision 6-7-e-e-b-e-3, Godot 4.7.2.
+> extension: revision 5-b-d-d-7-1-e, Godot 4.7.2.
 >
 > I set the direction, chose the character concept, and I'm accountable for
 > this submission. Claude Code wrote effectively all of the GDScript, the
