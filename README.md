@@ -50,7 +50,7 @@ Unchanged from the starter.
 | --- | --- |
 | **A / D** or **← / →** | Move |
 | **Space** | Jump (one fixed-height jump, no double jump) |
-| **R** | Retry the attempt |
+| **R** | Restart the attempt (dying already restarts on its own) |
 | **Esc / P** | Pause · **Enter** resumes |
 | **Enter** | Start, resume, or play again |
 | **M** | Main menu (from pause or completion) |
@@ -179,16 +179,16 @@ and an account of exactly what changed in that fixture are in
 
 ## Known limitations
 
-1. **No human playtest has been recorded yet.** TEST-REPORT §7 is an
-   unexecuted protocol with empty results. An automated input route is not a
-   playtest and is not presented as one. This is the biggest gap in the
-   submission.
+1. **Only one playtester, and it was the author.** TEST-REPORT §7 records a
+   real keyboard playtest that refuted one of my predictions and found one
+   defect. But a single run by the person who placed the platforms is the
+   weakest possible sample — I already knew where the take-off window was.
 2. **No second playtester** is claimed.
 3. **The film is not rendered.** See below.
-4. **The terrace jump has 8 px of margin** on a 56 px apex. The scripted route
-   makes it every time because it jumps on an exact tick; a human will not, and
-   first-timers will probably bonk the underside before the chevron band
-   teaches the timing.
+4. **The terrace jump has 8 px of margin** on a 56 px apex. I predicted a
+   first-timer would bonk the underside; the playtest did not, and CHANGE-BRIEF
+   R6 records that prediction as refuted. That is one biased data point, not
+   evidence the jump is forgiving.
 5. **The winding key overhangs the collider by 3.50 px** on the trailing side.
    Measured, declared, and asserted — not hidden.
 6. **The low road has 8 px of headroom** under the terrace. Walking through is

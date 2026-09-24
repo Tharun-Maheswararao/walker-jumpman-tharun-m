@@ -59,7 +59,7 @@ These are constraints on the edit, not decoration.
 | 6 | **Cause and effect** | 0:40 | Before/after on the raised spike bank, with the source diff on screen | `STARTER DRAW CODE + NEW LEVEL DATA` on the before-frame |
 | 7 | The fork, both roads | 0:30 | High road to the flag; then low road under the terrace, buttress, doubling back. Tick counters as a lower third | `SCRIPTED INPUT` if the timed comparison uses the fixtures |
 | 8 | Completion | 0:10 | Reaching the flag, completion card, Enter to replay | — |
-| 9 | **Verdict** | 0:25 | Test totals; the unexecuted human playtest stated plainly | — |
+| 9 | **Verdict** | 0:25 | Test totals; the refuted bonk prediction and the single-playtester bias stated plainly | — |
 | 10 | **Your Turn** | 0:15 | The fork decision frame, held | `HELD FRAME` |
 | 11 | Walker summary + outro | ~0:15 | Skill template + credits card | — |
 
@@ -118,8 +118,7 @@ finish pole drawn from the old ground baseline, spearing through the terrace.
 * **Narration:** AI text-to-speech (Liam), permitted by the assignment.
 * **Art:** original Godot vector drawing. No imported, purchased or
   AI-generated assets.
-* **Not claimed:** no human playtest recorded at the time of this render; no
-  second playtester.
+* **Not claimed:** only one playtester, the author; no second playtester.
 
 ## Quality gate before publishing
 

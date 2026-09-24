@@ -331,3 +331,30 @@ Added a painted chevron band on the ground at exactly that window, driven from
 level data so the paint and the physics describe the same span, and moved the
 two road captions to their own elevations because the low-road caption was being
 read straight through the character. Commit `b3b4d19`.
+
+### R6 — 2026-09-24 · The human playtest refuted failure case D, and found something else
+
+Played at a keyboard on revision `e138323`. Full record in TEST-REPORT §7.2.
+
+**Failure case D is refuted on its main claim.** I predicted the 48 px Terrace
+jump's 8 px margin would make a first-timer bonk the underside before the
+painted guide taught the timing. It did not happen — the guide was seen, read
+correctly as "jump here", and the jump landed first time. I have left the
+original prediction unedited above.
+
+I am deliberately *not* rewriting this into "the jump is forgiving." The one
+person who played it is the person who placed the platforms and already knew
+where the take-off window was. That is the most biased possible sample, and it
+is recorded as limitation 1 in TEST-REPORT §12 rather than claimed as a result.
+
+**The prediction I did not make.** Dying auto-restarts after 0.55 s, but the HUD
+hint said "R: retry" — so the player died on purpose, waited to press R, and the
+game restarted without them. The game was inconsistent with itself: the pause
+card has always called the same key "R: restart attempt". Fixed by changing the
+HUD string to "R: restart". One UI string; no behaviour touched.
+
+**Also confirmed by a human, which no test can establish:** the fork reads as a
+decision. Asked whether doubling back on the low road felt like a choice or like
+getting lost, the answer was "it felt like another choice." The automated check
+proves the roads *differ* by 2.28 s; only a person can say that difference feels
+deliberate.

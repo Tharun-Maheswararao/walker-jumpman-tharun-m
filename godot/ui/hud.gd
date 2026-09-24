@@ -24,7 +24,12 @@ func _draw() -> void:
 	var level_title: String = str(game.level.title).to_upper()
 	var level_title_width := ThemeDB.fallback_font.get_string_size(level_title, HORIZONTAL_ALIGNMENT_LEFT, -1, 14).x
 	text_at(level_title, Vector2(618 - level_title_width, 27), 14)
-	text_at("A/D or arrows: move     Space: jump     R: retry     Esc: pause", Vector2(22,50), 13)
+	# "restart", not "retry": dying already restarts the attempt on its own after
+	# 0.55s, so labelling R "retry" implies you have to press it to come back from
+	# a death. A playtester died deliberately and was surprised the game restarted
+	# without them. R restarts the attempt on demand at any time, which is what
+	# the pause card has always called it ("R: restart attempt").
+	text_at("A/D or arrows: move     Space: jump     R: restart     Esc: pause", Vector2(22,50), 13)
 	draw_rect(Rect2(22,63,596,3), Color("daddd6"))
 	var start_x: float = float(game.level.spawn[0])
 	var finish_x: float = float(game.level.finish[0])

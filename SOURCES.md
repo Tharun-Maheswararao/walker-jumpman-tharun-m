@@ -121,8 +121,10 @@ rather than minimising it. A fuller account with specifics is in FRICTIONAL.md.
 
 ### What is explicitly still outstanding
 
-* **The human playtest has not been performed.** TEST-REPORT §7 is an
-  unexecuted protocol with empty results. No automated route substitutes for it.
+* **The human playtest was performed by the human**, not the AI: played at a
+  keyboard on 2026-09-24, recorded in TEST-REPORT §7.2. It refuted one of the
+  AI's predictions and found the "R: retry" labelling defect, which drove a
+  source change.
 * **No second playtester.** None is claimed.
 * **The film is not rendered.** `film/` holds the plan, not the product.
 

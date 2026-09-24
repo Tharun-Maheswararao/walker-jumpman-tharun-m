@@ -272,11 +272,11 @@ the product, and README and SUBMISSION say so rather than implying otherwise.
 Listing this explicitly because the rubric asks me to distinguish my work from
 the AI's, and the honest answer is that the implementation was the AI's.
 
-1. **The human playtest has not happened.** TEST-REPORT §7 is written as an
-   unexecuted protocol with empty results, not as a result. Nobody has played
-   this with a keyboard. I will not let an automated input route stand in for it.
-2. **A second playtester.** None recorded. If nobody else plays it, that section
-   will say so.
+1. **The human playtest is done** — see §12 below. It refuted one of the AI's
+   predictions and found a defect. What is *not* done is a playtest by anyone
+   who did not design the level; one run by the author is the weakest possible
+   sample and TEST-REPORT §12.1 says so.
+2. **A second playtester.** Still none recorded. Not invented.
 3. **The film.** Blocked on the course skill (§8).
 4. **Being able to explain all of it.** The concepts I need to be able to defend
    without notes: why the measured apex is 56 px and not 53.3 px; why stacked
@@ -317,3 +317,51 @@ reverse is also true, so:
   level was enough. I verified the flag and buttress are on screen rather than
   assuming it.
 * The `walker-jumpman.command` launcher needed no changes.
+
+## 12. The playtest, and the prediction it killed
+
+**What I did.** Played the built game at a keyboard on revision `e138323`. Two
+runs: one taking the high road, one taking the low road. Full record in
+TEST-REPORT §7.2.
+
+**What I expected.** The AI had written, in CHANGE-BRIEF failure case D and
+again in the limitations, that the 48 px terrace jump has only 8 px of margin
+against a 56 px apex and that a first-timer would probably smack the underside
+of the terrace before the painted chevron guide taught them the timing.
+
+**What actually happened.** I completed the level on my second attempt. I saw
+the chevron band, it read as "jump here", and **I did not bonk the terrace** —
+the high-road jump landed first time. The spikes on the walkway were easy to
+see at running speed. Pausing mid-jump with Esc and resuming gave me no free
+jump.
+
+**What I checked in response.** The prediction is left unedited and marked
+**refuted** in CHANGE-BRIEF R6. I deliberately did **not** turn this into "the
+jump is forgiving," because I am the person who placed those platforms and
+already knew where the take-off window was. That is the most biased sample
+available, and it is now limitation 1 in TEST-REPORT §12 rather than a result.
+
+**The one thing that did not behave as I expected.** I died on purpose, waited
+to press R — and the game restarted by itself. That is the starter's designed
+behaviour (death auto-restarts after 0.55 s), but the HUD hint said
+**"R: retry"**, which reads as "press R to come back from a death." The game
+was also inconsistent with itself: the pause card has always called the same key
+**"R: restart attempt."**
+
+**What I changed.** The HUD string, to **"R: restart"**. One UI string; no
+timing, no input map, no state change. Suites re-run after it: 25/25, 9/9,
+22/22.
+
+**What I learned.** Two things worth keeping. First, a prediction being wrong in
+the design's favour is still a wrong prediction, and the honest move is to mark
+it refuted rather than quietly delete it and look prescient. Second, the defect
+I found was not in anything the AI built — it was an inconsistency the starter
+already had, which only became visible because a person sat there expecting
+something and it did not happen. No assertion in 56 checks could have found it,
+because nothing was broken. It was just wrong.
+
+**Human/AI split on this entry.** The playing, the observation and the decision
+to change the label are mine. The AI wrote the one-line change, re-ran the
+suites, and drafted this write-up from the notes I gave it.
+
+**Traceability.** TEST-REPORT §7.2 and §7.4, CHANGE-BRIEF R6, `godot/ui/hud.gd`.

@@ -68,15 +68,15 @@ against arithmetic.
 
 ## Known limitations
 
-1. **No human playtest is recorded.** TEST-REPORT §7 is an unexecuted protocol
-   with empty results. An automated input route is not a playtest and is not
-   presented as one. This is the largest gap in the submission.
+1. **Only one playtester, and it was the author.** TEST-REPORT §7 records a
+   real keyboard playtest which refuted one prediction and found one defect
+   (the "R: retry" label). A single run by the level's designer is still the
+   weakest possible sample.
 2. **No second playtester** is claimed.
 3. **The film is not rendered.** See below.
-4. **The terrace jump has 8 px of margin** against a 56 px apex. The scripted
-   route makes it every time because it jumps on an exact tick; a human will
-   not, and first-timers will likely bonk the underside before the painted
-   guide teaches the timing.
+4. **The terrace jump has 8 px of margin** against a 56 px apex. I predicted a
+   first-timer would bonk the underside; the playtest refuted that
+   (CHANGE-BRIEF R6). One biased data point, not proof the jump is forgiving.
 5. **The winding key overhangs the collider by 3.50 px** on the trailing side —
    measured, declared and asserted, not hidden.
 6. **8 px of headroom** under the terrace on the low road. Walking through is

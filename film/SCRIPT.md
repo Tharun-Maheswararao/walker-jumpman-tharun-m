@@ -194,9 +194,14 @@ timed comparison.]**
 > first-timers to bonk the underside before the painted guide teaches the
 > timing.
 >
-> And the honest one: **at the time of this recording there is no human playtest
-> in my test report.** An automated input route is not a playtest and I'm not
-> going to write it up as one. That section is a protocol with empty results.
+> And the honest one. I did play this at a keyboard, and it went better than I
+> predicted — I said a first-timer would smack the underside of that terrace
+> before the painted guide taught the timing, and I didn't. That prediction is
+> in my change brief, marked refuted, not quietly deleted.
+>
+> But one person played this, and it was me — the person who placed the
+> platforms and already knew where the take-off window was. That's the weakest
+> sample there is. It needs someone who hasn't seen the geometry.
 
 **[Test totals on screen. State the playtest gap plainly — do not soften it.]**
 
@@ -231,6 +236,6 @@ timed comparison.]**
 > text-to-speech. All the art is original vector drawing — nothing imported,
 > nothing purchased, nothing generated.
 >
-> No human playtest is claimed in this cut, and no second playtester.
+> One playtest, by me. No second playtester is claimed.
 
 **[Attribution card held long enough to read.]**

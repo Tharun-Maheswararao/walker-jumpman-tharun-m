@@ -9,9 +9,10 @@ starter records as its tested engine.
 
 > **What this document is and is not.** Everything below marked *machine* is a
 > real run of the real engine whose raw output is committed under `evidence/`.
-> Everything marked *human* is me at the keyboard. **The human playtest section
-> is not yet filled in** — see §7, which is written as an unexecuted protocol,
-> not as a result. I have not claimed a playtest I did not run.
+> Everything marked *human* is me at the keyboard. §7 records a human playtest
+> that was actually performed on 2026-09-24; it overturned one of my
+> predictions and found one defect, both written up rather than smoothed over.
+> There is still no second playtester and none is claimed.
 
 ---
 
@@ -211,10 +212,53 @@ should have happened.
    free jump on resume.
 8. Complete the level. Press Enter to play again.
 
-**7.2 Results.** *Not yet recorded.*
+**7.2 Results — executed 2026-09-24, revision `e138323`, by me (Tharun).**
 
-**7.3 Second playtester.** *Not yet recorded. I will not invent one; if nobody
-else plays it, this section will say so.*
+Played with a real keyboard on the build in this repository. Two runs: one
+taking the high road, one taking the low road.
+
+| # | Step | What actually happened |
+| --- | --- | --- |
+| 1–2 | Original section, Junction, both stones | **Completed the level on the second attempt.** One failed attempt before that. *(Cause of the first failure not recorded at the time — see §7.4.)* |
+| 3 | Painted chevron guide at the fork | **Seen, and it read correctly as "jump here."** |
+| 3 | First attempt at the 48 px Terrace jump | **Did not bonk the underside.** Made it without a failed attempt. **This refutes the prediction in CHANGE-BRIEF failure case D.** |
+| 4 | Terrace spike bank legibility | **Legible at normal running speed.** |
+| 5 | Deliberate death | Died on purpose. **Did not press R — the game restarted on its own,** which was unexpected. See §7.4. |
+| 6 | Low road: under the Terrace, buttress, double back | Completed. |
+| 7 | Does doubling back read as a decision? | **"It felt like another choice"** — the fork's intent landed rather than reading as getting lost. |
+| 8 | Pause mid-jump (Esc), resume (Enter) | **No free jump on resume.** The jump-release re-arm works against a human, not just against `pause-freezes`. |
+
+**Two predictions overturned by playing it, both in the design's favour:**
+
+* **Failure case D is refuted.** I predicted the 8 px margin on the Terrace jump
+  would make first-timers bonk the underside before the guide taught the timing.
+  It did not happen on the first attempt. I have left the original prediction
+  unedited and added CHANGE-BRIEF revision R6. One player is one data point, not
+  proof the jump is forgiving — but it is evidence, and it points the opposite
+  way from what I wrote.
+* **The fork reads as a decision to a human**, which no automated check can
+  establish. `low-road-is-slower-than-high-road` proves the roads *differ*; only
+  a person can say the difference feels like a choice.
+
+**7.3 Second playtester.** *Still none. Not invented.*
+
+**7.4 Defect found by the playtest, and what I changed**
+
+The one thing that did not behave as the player expected. Dying auto-restarts
+after 0.55 s, but the persistent HUD hint read **"R: retry"** — which implies R
+is how you come back from a death. The playtester died deliberately, waited to
+press R, and the game restarted without them.
+
+The game was also inconsistent with itself: the pause card has always called the
+same key **"R: restart attempt"**, while the HUD called it "retry".
+
+**Changed** the HUD hint to **"R: restart"**, matching the pause card and
+describing what the key actually does — restart the attempt on demand at any
+time. **Behaviour is untouched**: no timing, no input mapping, no state change.
+One UI string. Suites re-run after the change: 25/25, 9/9, 22/22.
+
+This is the third revise cycle and the only one driven by a human at the
+keyboard rather than by a test or a screenshot.
 
 ## 8. Camera and presentation
 
@@ -342,13 +386,16 @@ fixture change, showing `complete-real-route` FAIL with the player dead at
 
 ## 12. Known limitations and things I am not sure about
 
-1. **No human playtest recorded yet** (§7). This is the largest gap in this
-   report and I am not going to disguise it.
-2. **The Terrace jump has 8 px of margin** on a 56 px apex. The automated route
-   makes it every time because it jumps on an exact tick. A human will not, and
-   my expectation is that first-timers bonk the underside at least once before
-   the chevron band teaches the timing. Whether the band is enough is precisely
-   what §7.1 step 3 is for.
+1. **Only one playtester, and it was me.** §7 records a real playtest, but a
+   single run by the person who designed the level is the weakest possible
+   sample. I already knew where the take-off window was — which is exactly the
+   bias that makes my "did not bonk the Terrace" result worth less than it
+   looks. A player who has not seen the geometry is what this needs.
+2. **The Terrace jump has 8 px of margin** on a 56 px apex. I predicted a
+   first-timer would bonk the underside before the chevron band taught the
+   timing; my own playtest did not (§7.2), and CHANGE-BRIEF R6 records that as
+   a refuted prediction. I am **not** upgrading that into "the jump is
+   forgiving" — one biased data point does not support the claim.
 3. **The winding key overhangs the collider by 3.50 px** on the trailing side
    (§4). Measured and declared, not hidden.
 4. **The low road's 8 px headroom is real.** A player who jumps while under the
