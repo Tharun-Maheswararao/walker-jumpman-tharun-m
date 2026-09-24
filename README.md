@@ -1,43 +1,263 @@
-# walker-jumpman — First Steps
+# walker-jumpman-tharun-m
 
-**Playable source prototype · September 10, 2026 · Godot 4.7.2 / GDScript**
+**CSYE 7270 · Fall 2026 · Assignment 1 — Extend Walker Jumpman**
+**Tharun Maheswararao** · `maheswararao.t@northeastern.edu`
 
-Standalone game repository: [nikbearbrown/walker-jumpman](https://github.com/nikbearbrown/walker-jumpman). This checkout contains only this game's source, design package, and test evidence—not the Walker toolkit, Brutalist, or video renders.
+An extension of the course starter: a new main character, **SPROCKET** the
+wind-up tin automaton, and a new playable section, **03 / THE FORK**, which
+roughly doubles the course and moves the finish behind it.
 
-Clone with `git clone https://github.com/nikbearbrown/walker-jumpman.git`, then import `walker-jumpman/godot/project.godot` in the regular Godot editor. No .NET runtime or external assets are required. On macOS, the launcher below also works when Godot is installed in Applications; on other platforms, use the editor or `godot --path godot` from the cloned folder.
+![The fork: SPROCKET on the painted launch guide, with the high road on the terrace and the low road beneath it](evidence/screens/14-the-fork.png)
 
-Double-click [walker-jumpman.command](walker-jumpman.command) to play. Press **Enter** to start; **A/D or arrows** to move, **Space** to jump, **R** to retry, and **Escape/P** to pause. Reach the flag. Retries are unlimited.
+---
 
-![The actual First Steps game, captured during a scripted jump](evidence/screens/03-jump.png)
+## Starter credit
 
-This simple level has two steps, two gaps, one spike hazard, and a finish. It is the control/retry slice, not the full three-zone/cherry design below. See [build results and limitations](BUILD-REPORT.md). To edit, import [godot/project.godot](godot/project.godot) into Godot.
+This is an extension of **[nikbearbrown/walker-jumpman](https://github.com/nikbearbrown/walker-jumpman)**
+by Nik Bear Brown, at commit `9387542`. It is **not** a new game.
 
-The first Walker example is a compact 2D platformer built around readable jumps, optional cherries and quick retries. Every new game project uses the `walker-` prefix. The original `jumping-man-godot` recovery collection remains separate and unchanged; it is not included or required here. Historical design references to sibling recovery files refer to the author's local source collection, not files shipped in this repository.
+The unmodified starter is committed here as the first commit, `8c9085d`, so
+every change in this repository is a reviewable diff against the instructor's
+original. The starter's own design package is preserved unchanged
+(`GDD.md`, `LEVEL-DESIGN.md`, `BUILD-REPORT.md`, `design/`, and the rest), its
+README is kept at [starter-docs/STARTER-README.md](starter-docs/STARTER-README.md),
+and its test evidence is in [`evidence/baseline/`](evidence/baseline/).
 
-## Read in this order
+## Engine
 
-1. [Game brief](GAME-BRIEF.md) — the short player-facing idea and proposed scope.
-2. [Detailed GDD](GDD.md) — sixteen design sections, source evidence, requirements and twenty-two acceptance cases.
-3. [Level design](LEVEL-DESIGN.md) — the three-zone course and its untested geometry.
-4. [Production plan](PRODUCTION-PLAN.md) — twenty-two dependency-ordered tasks across six phases, plus four deferred tasks.
-5. [Playtest plan](PLAYTEST-PLAN.md) — mechanical tests, formative human sessions, evidence and revision rules.
-6. [Asset plan](ASSET-PLAN.md) — original greybox requirements and the provenance boundary.
-7. [Design status](DESIGN-STATUS.json) — machine-readable revision, decisions, pending approvals and honest runtime state.
+**Godot `4.7.2.stable.official.ed1daf0bf`** — the exact build the starter names
+as its tested engine. No .NET runtime, no plugins, no external assets.
 
-![Candidate walker-jumpman course map; not a gameplay screenshot](design/level-overview.png)
+Developed and tested on macOS 15.6 (Darwin 24.6.0), Apple M4, OpenGL
+Compatibility renderer.
 
-[Design consistency review](DESIGN-REVIEW.md) · [Editable SVG map](design/level-overview.svg)
+## Run it
 
-[Level coordinate data](design/level-01.json) drives this candidate blockout. Counts and geometry can be checked without Godot. Jump reachability, zero-cherry/all-cherry routing, camera behavior and enjoyment have not been tested.
+Install Godot 4.7.2 (on macOS: `brew install --cask godot`), then either
+double-click [`walker-jumpman.command`](walker-jumpman.command), or:
 
-## Proposed defaults ready for review
+```bash
+godot --path godot
+```
 
-Godot 4 with typed GDScript, Compatibility rendering, one three-zone level, twenty optional cherries, one fixed-height jump with small forgiveness windows, hazards, quick retries, keyboard controls and a locally tested Web export. No paid services. No moving-platform dependency in the MVP.
+Or import `godot/project.godot` in the Godot editor and press Play.
 
-The tested engine is Godot 4.7.2.stable.official.ed1daf0bf. Zelda's reusable prompt and command/workflow specification belong to the separate Walker toolkit and are not dependencies of this game.
+## Controls
 
-## Current boundary
+Unchanged from the starter.
 
-The full design is still a draft. Bear subsequently authorized **“Build a simple level for walker-jumpman.”** The first slice is implemented and machine-tested; full-design approvals, human playtesting, cherries/settings, and the Web export remain pending. This is a source-code release, not a hosted game or downloadable executable. The build report and test receipts preserve the earlier local-build history.
+| Key | Action |
+| --- | --- |
+| **A / D** or **← / →** | Move |
+| **Space** | Jump (one fixed-height jump, no double jump) |
+| **R** | Retry the attempt |
+| **Esc / P** | Pause · **Enter** resumes |
+| **Enter** | Start, resume, or play again |
+| **M** | Main menu (from pause or completion) |
 
-Next: play this small control/retry loop before expanding the course. The human owns intent, scope, play-feel judgments, and release decisions; AI implements and checks authorized work. The original `/Users/bear/walker-jumpman` stays untouched.
+Reach the flag. Retries are unlimited and a manual retry does not count as a
+death.
+
+## What I changed
+
+### 1. The character — SPROCKET, a wind-up tin automaton
+
+The starter draws its character in `godot/features/player/player.gd::_draw()`
+as seven flat rectangles with a sliding cream visor. There is no sprite sheet.
+I replaced that drawing entirely:
+
+![SPROCKET in four states with the unchanged 18x28 collider overlaid in magenta](evidence/screens/character-sheet.png)
+
+* A **chamfered brass barrel** torso — the cut corners change the actual
+  outline, so the silhouette differs from the starter's plain rectangle even
+  as a flat black shape.
+* A **narrow domed head** with a single round **teal lens** — the starter has
+  no curves anywhere.
+* A **winding key on the back**. This is the facing tell: it always sits on the
+  *trailing* side and flips when SPROCKET turns, and its prongs **rotate while
+  running** and **freeze in the air**.
+* **Piston legs** that alternate as a stride when grounded and **retract into a
+  visible coil** with splayed foot pads when airborne, so the jumping pose is
+  unmistakably not the standing pose.
+
+**Physics, tuning and the collider are untouched.** The collider is still an
+18×28 box at offset (0, −14); all eight values in `tuning.gd` are unchanged, and
+`test_extension.gd` asserts both. The whole body is drawn inside the collider —
+the topmost drawn pixel is at −27.5 against a collider top of −28. The **one**
+deliberate exception is the winding key, which extends **3.50 px** past the
+collider's side wall on the trailing side; that number is derived from the same
+constants the drawing uses and is asserted by a test rather than eyeballed.
+
+### 2. The level — section 03 "The Fork"
+
+The course goes from 960 px to **2080 px** and the flag moves from x = 916 to
+**x = 1824**. Every original solid, the original spike and the spawn keep their
+exact coordinates; only the finish moved.
+
+Left to right, the new section is: **The Junction** (a 64 px gap jump), **two
+narrow 64 px stepping stones** over real pits, a **ground run**, and then the
+fork itself — two ways to the same flag:
+
+| | **HIGH ROAD** | **LOW ROAD** |
+| --- | --- | --- |
+| How | Jump 48 px up onto a thin terrace | Ignore it; run the ground underneath |
+| Risk | A spike bank on the walkway | Nothing to miss, nothing to hit |
+| Cost | The hardest jump in the game (48 px against a 56 px apex) | The only way up is **past the flag**, so you must double back |
+| Measured | **666 ticks / 11.15 s** | **803 ticks / 13.43 s** |
+
+The trade-off is **measured, not asserted**: `low-road-is-slower-than-high-road`
+records a **2.28 s** difference. Horizontal speed in this engine is a constant
+160 px/s airborne as well as grounded, so distance travelled is the only thing
+that can separate the two roads — which is exactly why the low road's cost is
+built out of doubling back rather than out of "going slower".
+
+Failing the high road is forgiving by design: mistime the terrace jump and you
+smack its left face, drop back to the ground, and are simply on the low road.
+
+Seven new landings require a jump. The assignment asks for two.
+
+### 3. Making the picture agree with the physics
+
+The starter builds collision from the level JSON but draws the world from
+numbers hard-coded to a 960 px course. Widening the level alone therefore
+produces a broken picture. One frame, captured by running the **starter's**
+drawing code against **my** level data, shows three of these at once:
+
+![The starter's drawing code with the new level data: spikes painted 64px below their own trigger, no backdrop, progress bar already full](evidence/screens/bug-before-15-terrace-and-raised-spikes.png)
+
+* The raised spike bank is painted on the **ground**, 64 px below the trigger
+  the player is actually walking into — an invisible killer plus a decorative
+  fake. `_add_area()` honoured the data; `_draw()` hard-coded `y = 320`.
+* The backdrop and grid are **absent** through the whole new region.
+* The progress bar is **already full** with the flag still ahead.
+* The finish pole is drawn from the ground baseline and **spears through** the
+  terrace instead of standing on it.
+
+All of it now reads from the level data. `hazard_triangle()` is the single
+definition of a spike's shape, called by both the trigger builder and the
+renderer, so they cannot drift apart again — and a test asserts it.
+
+### 4. A painted launch guide
+
+The terrace take-off window is x 1580–1618, which is *before* the terrace
+starts at 1664 — so the instinctive move, run up under it and jump, bonks. A
+chevron band is painted on the ground at exactly the measured window, driven
+from level data so the paint and the physics describe the same span. It has no
+collision. This came from looking at a screenshot, not from a failing test.
+
+## Verification
+
+| Suite | Checks | Failures |
+| --- | ---: | ---: |
+| `tests/test_game.gd` (starter's) | 25 | **0** |
+| `tests/test_keyboard.gd` (starter's, byte-identical) | 9 | **0** |
+| `tests/test_extension.gd` (new) | 22 | **0** |
+| **Total** | **56** | **0** |
+
+```bash
+/Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_game.gd
+```
+```bash
+/Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_keyboard.gd
+```
+```bash
+/Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tests/test_extension.gd
+```
+
+Level geometry is designed against the **measured** jump envelope, not textbook
+arithmetic. `godot/tools/probe_jump.gd` measures the real player in the real
+engine: the apex rise is **56.0 px**, not the `v²/2g` value of 53.3 px, and the
+maximum flat gap is **130 px**.
+
+```bash
+/Applications/Godot.app/Contents/MacOS/Godot --headless --path godot --script res://tools/probe_jump.gd
+```
+
+Full results, the preserved pre-update failure of the starter's route fixture,
+and an account of exactly what changed in that fixture are in
+**[TEST-REPORT.md](TEST-REPORT.md)**.
+
+## Known limitations
+
+1. **No human playtest has been recorded yet.** TEST-REPORT §7 is an
+   unexecuted protocol with empty results. An automated input route is not a
+   playtest and is not presented as one. This is the biggest gap in the
+   submission.
+2. **No second playtester** is claimed.
+3. **The film is not rendered.** See below.
+4. **The terrace jump has 8 px of margin** on a 56 px apex. The scripted route
+   makes it every time because it jumps on an exact tick; a human will not, and
+   first-timers will probably bonk the underside before the chevron band
+   teaches the timing.
+5. **The winding key overhangs the collider by 3.50 px** on the trailing side.
+   Measured, declared, and asserted — not hidden.
+6. **The low road has 8 px of headroom** under the terrace. Walking through is
+   fine; jumping while under it bonks.
+7. **The fork reconverges** rather than being a true branch. CHANGE-BRIEF §3
+   sets out, with measured numbers, why genuinely parallel stacked lanes are
+   arithmetically impossible in this engine without re-tuning the jump — which
+   the assignment forbids.
+8. **The launch guide's position is placed by hand** and is not validated
+   against the physics by any test. If the geometry moved and the band did not,
+   nothing would catch it.
+9. **No web export, no packaged application**, and no cherries or settings
+   screen — all out of scope for this assignment, as in the starter.
+
+## The film
+
+> **Status: not rendered.** The required Brutalist `godot-waikthrough` skill
+> (walker modifier) is not present in this checkout, and no course-provided copy
+> was available on this machine. Following the assignment's own instruction, the
+> course-provided version has been requested rather than substituting a public
+> repository that may differ from it.
+>
+> What exists now: the complete plan and the gameplay evidence it will cut
+> against — [film/BEAT-SHEET.md](film/BEAT-SHEET.md) and
+> [film/SCRIPT.md](film/SCRIPT.md).
+
+| Field | Value |
+| --- | --- |
+| Final film URL | *pending render* |
+| Filename | *pending render* |
+| SHA-256 | *pending render* |
+| Game-source revision shown | *pending render* |
+
+MP3, MP4 and any file over 25 MB are excluded from this repository by
+`.gitignore`; the film will live in the designated course media storage and be
+linked from this table, identified by filename and SHA-256.
+
+## Documents
+
+| Document | What it is |
+| --- | --- |
+| [CHANGE-BRIEF.md](CHANGE-BRIEF.md) | The predictions, written before any edit, with dated revisions appended rather than rewritten |
+| [TEST-REPORT.md](TEST-REPORT.md) | What was actually run and what actually happened, including the unexecuted human-playtest protocol |
+| [FRICTIONAL.md](FRICTIONAL.md) | The honest log, including the fork design I spent the longest on and then rejected |
+| [SOURCES.md](SOURCES.md) | Starter credit, asset provenance, and a plain statement of what the AI did versus what I did |
+| [SUBMISSION.md](SUBMISSION.md) | The Canvas submission note |
+| [starter-docs/STARTER-README.md](starter-docs/STARTER-README.md) | The starter's own README, preserved |
+
+## Repository layout
+
+```
+godot/
+  features/player/player.gd     SPROCKET + unchanged physics
+  features/player/tuning.gd     unchanged
+  game/session.gd               data-driven drawing + hazard_triangle()
+  levels/first_steps.json       section 03 The Fork
+  ui/hud.gd                     data-driven progress and title
+  tests/test_game.gd            starter's suite (tick budget only)
+  tests/test_keyboard.gd        starter's suite (byte-identical)
+  tests/test_extension.gd       new 22-check suite
+  tests/route_driver.gd         extended to phases; original marks preserved
+  tools/probe_jump.gd           measures the real jump envelope
+  tools/capture_character.gd    character sheet with collider overlay
+  tools/capture_shots.gd        captures the real game along the real routes
+evidence/
+  baseline/                     the starter's results, before any change
+  predicted-failures/           the route fixture failing, preserved
+  screens/                      real captures, including the before/after pair
+  jump-envelope.json            measured physics
+film/                           beat sheet and script (not rendered)
+starter-docs/                   the starter's README
+```

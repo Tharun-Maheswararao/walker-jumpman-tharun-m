@@ -241,4 +241,93 @@ the trade-off is wrong and I will say so rather than quietly rewording it.
 
 *Dated entries added after implementation and testing. Nothing above is rewritten.*
 
-<!-- Revision entries are appended here as they occur. -->
+### R1 — 2026-09-24 · My jump arithmetic was wrong by 5%, in my favour
+
+Section 3 quotes a 53.3 px apex from `v²/2g`. Before placing any geometry I
+measured the real thing with `godot/tools/probe_jump.gd`, and the shipped
+player actually rises **56.0 px**. The 60 Hz integrator applies the jump impulse
+for a full tick before gravity fully bites, so the discrete result beats the
+continuous one. Every reachability number in section 3 was therefore
+conservative. The measured envelope is in `evidence/jump-envelope.json`:
+
+| Landing rise | Max edge-to-edge gap |
+| ---: | ---: |
+| 0 px | 130.00 px |
+| 24 px | 114.00 px |
+| 32 px | 106.00 px |
+| 48 px | 92.67 px |
+| 56 px | 74.00 px |
+
+I designed the section against the measured column, not the paper one.
+
+**The stacked-lane analysis in section 3 survives the correction and gets
+stronger.** I claimed a jumping player's head reaches 81.3 px; measured, it
+reaches **84.0 px**, so the ceiling that a two-lane fork would need is even
+further out of reach. The rejected design stays rejected.
+
+### R2 — 2026-09-24 · Failure cases A, B, C and E all happened
+
+A, B and C were confirmed in a single frame by rebuilding the project with the
+**starter's** drawing code and **my** level data:
+`evidence/screens/bug-before-15-terrace-and-raised-spikes.png`. The raised spike
+bank is painted on the ground 64 px below the trigger the player is actually
+walking into, the backdrop and grid are simply absent in the new region, and the
+progress bar is already full. E happened as written — the unmodified route
+fixture ran out of marks and fell into the first new pit at `x=1017, y=435.9`,
+preserved in `evidence/predicted-failures/`.
+
+**One consequence I did not predict:** the finish pole is *also* drawn from the
+hard-coded ground baseline, so with the flag moved onto the raised Terrace the
+pole spears down through the walkway instead of standing on it. I predicted the
+hazard baseline bug and missed that the same bug exists in the finish marker
+five lines below it. Both are fixed.
+
+### R3 — 2026-09-24 · Failure case D was half right, and the half I got wrong mattered
+
+I predicted the terrace jump would "work but feel tight" and that I was less
+sure about the 4 px headroom. Both parts moved:
+
+* The headroom is **8 px**, not 4 — I made the Terrace 12 px thick rather than
+  16 while laying out the geometry, which I had not accounted for in the brief.
+  A standing player's head is at 292 and the Terrace underside is at 284.
+* The real problem was not the terrace jump at all. It was the **low road's
+  climb-out**, which I had not flagged as risky. The automated low-road fixture
+  failed: the player stuck at `x=1935`, pinned against the climb step. The jump
+  mark sat *under* the Terrace, so it bonked the headroom and fell back. Working
+  the geometry backwards, the safe road's climb-out had an **8 px take-off
+  window** — about 0.05 s. That is an unacceptable demand on the route whose
+  entire job is to be forgiving.
+
+Fixed by geometry, not by tuning or by relaxing the test: the Terrace was
+shortened to end at 1880 and the climb-out became a 36 px-tall buttress moved
+out to 1960, which widens the window to **39 px**. Detail in TEST-REPORT.md.
+
+### R4 — 2026-09-24 · The route-timing prediction was directionally right and numerically low
+
+I wrote that I expected "roughly a second" between the roads, and flagged that I
+might be wrong because horizontal speed is a constant 160 px/s in the air as
+well as on the ground. The reasoning was right — distance is the only thing that
+can separate the roads — but the number was low. Measured over the full course:
+
+| Route | Ticks | Clock |
+| --- | ---: | ---: |
+| High road | 666 | 11.15 s |
+| Low road | 803 | 13.43 s |
+| **Difference** | **137** | **2.28 s** |
+
+The extra cost is the doubling back plus the deceleration needed to land on a
+56 px buttress, which the constant-speed argument does not capture. The
+`low-road-is-slower-than-high-road` check now asserts this rather than assuming
+it, so if later geometry changes flatten the trade-off the suite will say so.
+
+### R5 — 2026-09-24 · One revision that came from looking, not from a test
+
+Reading `evidence/screens/14-the-fork.png` I noticed the level never tells the
+player where the high road begins. The measured take-off window is x 1580–1618,
+which is *before* the Terrace starts at 1664, so the instinctive move — run up
+under the Terrace, then jump — lands you in the headroom and bonks. No assertion
+would ever have caught this; the route fixture knew the right number already.
+Added a painted chevron band on the ground at exactly that window, driven from
+level data so the paint and the physics describe the same span, and moved the
+two road captions to their own elevations because the low-road caption was being
+read straight through the character. Commit `b3b4d19`.
