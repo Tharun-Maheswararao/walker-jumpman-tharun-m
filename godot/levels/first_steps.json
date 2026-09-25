@@ -4,14 +4,16 @@
   "scope": "Starter control/retry slice (x 0-960) plus the added section 03 The Fork (x 960-2080). Not the proposed full three-zone course.",
   "width": 2080,
   "fall_y": 430,
-  "spawn": [64, 320],
+  "spawn": [
+    64,
+    320
+  ],
   "solids": [
     [0, 320, 448, 64],
     [512, 320, 224, 64],
     [784, 320, 176, 64],
     [160, 304, 48, 16],
     [576, 288, 48, 32],
-
     [1024, 320, 160, 64],
     [1256, 320, 64, 16],
     [1392, 320, 64, 16],
@@ -24,18 +26,26 @@
     [1760, 256, 24, 16]
   ],
   "finish": [1824, 216, 24, 56],
-  "hills": [100, 470, 770, 1110, 1450, 1790, 2080],
+  "hills": [
+    100,
+    470,
+    770,
+    1110,
+    1450,
+    1790,
+    2080
+  ],
   "guides": [
     [1580, 320, 40, 12]
   ],
   "labels": [
-    [33, 251, 15, "01 / GET MOVING"],
-    [33, 273, 13, "Read the landing. Then jump."],
-    [474, 227, 15, "02 / MIND THE GAP"],
-    [1030, 251, 15, "03 / THE FORK"],
-    [1030, 273, 13, "Two stones. Then pick a road."],
-    [1590, 242, 13, "HIGH ROAD  /  direct, but spiked"],
-    [1640, 308, 13, "LOW ROAD  /  safe, but longer"],
-    [1802, 205, 15, "FINISH"]
+    [33, 251, 20, "01 / GET MOVING"],
+    [33, 273, 17, "Read the landing. Then jump."],
+    [474, 227, 20, "02 / MIND THE GAP"],
+    [1030, 251, 20, "03 / THE FORK"],
+    [1030, 273, 17, "Two stones. Then pick a road."],
+    [1590, 242, 17, "HIGH ROAD  /  direct, but spiked"],
+    [1640, 308, 17, "LOW ROAD  /  safe, but longer"],
+    [1802, 205, 20, "FINISH"]
   ]
 }

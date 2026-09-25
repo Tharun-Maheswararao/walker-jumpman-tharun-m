@@ -191,8 +191,12 @@ func run() -> void:
 			await hold_frames(70)
 
 		"controls":
-			# pause / resume / manual restart / main menu, all via real keys
+			# Title card first, so the menu and the Enter that starts a session
+			# are genuinely on screen long enough to be cited as evidence, then
+			# pause / resume / manual restart / main menu, all via real keys.
+			await hold_frames(45)
 			await tap_key(KEY_ENTER, "Enter")
+			note("Enter started the session from the title card")
 			press("move_right")
 			await hold_frames(30)
 			press("jump")

@@ -1,0 +1,259 @@
+{
+  "created_at": "2026-09-25T01:04:48",
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "results": [
+    {
+      "id": "original-solids-unchanged",
+      "observed": {
+        "first_five": "[[0.0, 320.0, 448.0, 64.0], [512.0, 320.0, 224.0, 64.0], [784.0, 320.0, 176.0, 64.0], [160.0, 304.0, 48.0, 16.0], [576.0, 288.0, 48.0, 32.0]]"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "original-spike-unchanged",
+      "observed": {
+        "hazard_0": "[320.0, 304.0, 24.0, 16.0]"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "original-spawn-unchanged",
+      "observed": {
+        "spawn": "[64.0, 320.0]"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "tuning-unchanged",
+      "observed": {
+        "buffer": 6,
+        "coyote": 6,
+        "gravity": 960.0,
+        "jump_velocity": -320.0,
+        "speed": 160.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "collider-unchanged",
+      "observed": {
+        "offset": "(0.0, -14.0)",
+        "size": "(18.0, 28.0)"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "body-art-within-collider",
+      "observed": {
+        "body_top_y": -27.5,
+        "collider_top_y": -28.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "key-overhang-small-and-declared",
+      "observed": {
+        "note": "trailing side only; derived from the same constants _draw() uses",
+        "overhang_px": 3.5
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "finish-relocated-past-new-section",
+      "observed": {
+        "finish_x": 1824.0,
+        "original_finish_x": 916.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "level-widened",
+      "observed": {
+        "original_width": 960,
+        "width": 2080.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "new-landings-need-jumps",
+      "observed": {
+        "gaps": [
+          {
+            "gap_px": 64.0,
+            "landing": "junction"
+          },
+          {
+            "gap_px": 72.0,
+            "landing": "stone-1"
+          },
+          {
+            "gap_px": 72.0,
+            "landing": "stone-2"
+          },
+          {
+            "gap_px": 64.0,
+            "landing": "ground-run"
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "new-landings-within-measured-envelope",
+      "observed": {
+        "gaps": [
+          {
+            "gap_px": 64.0,
+            "landing": "junction"
+          },
+          {
+            "gap_px": 72.0,
+            "landing": "stone-1"
+          },
+          {
+            "gap_px": 72.0,
+            "landing": "stone-2"
+          },
+          {
+            "gap_px": 64.0,
+            "landing": "ground-run"
+          }
+        ],
+        "measured_max_flat_gap_px": 130.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "stones-cannot-be-overshot",
+      "observed": {
+        "jumps": [
+          {
+            "furthest_reachable_centre": 1305.0,
+            "jump": "junction -> stone-1",
+            "landing_window_ends": 1329.0,
+            "spare_px": 24.0
+          },
+          {
+            "furthest_reachable_centre": 1441.0,
+            "jump": "stone-1 -> stone-2",
+            "landing_window_ends": 1465.0,
+            "spare_px": 24.0
+          },
+          {
+            "furthest_reachable_centre": 1577.0,
+            "jump": "stone-2 -> ground-run",
+            "landing_window_ends": 2089.0,
+            "spare_px": 512.0
+          }
+        ]
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "terrace-rise-within-apex",
+      "observed": {
+        "margin_px": 8.0,
+        "measured_apex_px": 56.0,
+        "rise_px": 48.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "low-road-headroom",
+      "observed": {
+        "clearance_px": 8.0,
+        "standing_head_y": 292.0,
+        "terrace_underside_y": 284.0
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "hazard-art-matches-trigger",
+      "observed": {
+        "hazards": 2,
+        "note": "trigger polygons rebuilt from the same hazard_triangle() the renderer calls",
+        "points": 18
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "new-hazard-is-raised",
+      "observed": {
+        "actual_base_y": 272.0,
+        "baseline_the_starter_hard_coded": 320.0,
+        "hazard": "[1760.0, 256.0, 24.0, 16.0]"
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "terrace-spikes-kill",
+      "observed": {
+        "deaths": 1,
+        "state": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "terrace-spikes-retry-respawns",
+      "observed": {
+        "position": "(64.0, 320.0)",
+        "state": 1
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "new-pit-fall-retries",
+      "observed": {
+        "fall_y": 430.0,
+        "state": 3
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "progress-bar-rescaled",
+      "observed": {
+        "note": "the starter divided by a hard-coded 852 and would read 1.000 here",
+        "progress_at_old_finish": 0.484
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "high-road-completes",
+      "observed": {
+        "deaths": 0,
+        "elapsed": 11.1500000000001,
+        "marks": 11,
+        "position": "(1822.209, 227.9243)",
+        "state": 4,
+        "ticks": 666
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "low-road-completes",
+      "observed": {
+        "deaths": 0,
+        "elapsed": 13.4333333333336,
+        "marks": 11,
+        "position": "(1851.541, 271.9253)",
+        "state": 4,
+        "ticks": 803
+      },
+      "status": "PASS"
+    },
+    {
+      "id": "low-road-is-slower-than-high-road",
+      "observed": {
+        "difference_seconds": 2.28,
+        "difference_ticks": 137,
+        "high_road_elapsed_s": 11.15,
+        "high_road_ticks": 666,
+        "low_road_elapsed_s": 13.43,
+        "low_road_ticks": 803
+      },
+      "status": "PASS"
+    }
+  ],
+  "scope": "Section 03 The Fork and the SPROCKET character. Scripted input and geometry only; not human playtesting."
+}

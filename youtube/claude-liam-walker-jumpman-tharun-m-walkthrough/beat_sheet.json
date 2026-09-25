@@ -1,0 +1,434 @@
+{
+  "metadata": {
+    "title": "Walker Jumpman, Extended",
+    "slug": "claude-liam-walker-jumpman-tharun-m-walkthrough",
+    "topic": "WALKER · GAME WALKTHROUGH",
+    "kind": "godot-walkthrough",
+    "playlist": "Walker",
+    "brand": "claude-liam",
+    "audience": "CSYE 7270 reviewers and Walker users extending the starter",
+    "register": "Walkthrough",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "aspect_ratio": "16:9",
+    "captions": false,
+    "channel_title": "@NikBearBrown",
+    "channel": "@NikBearBrown",
+    "presenter": "Liam (in for Bear)",
+    "persona": "Liam (in for Bear)",
+    "run_id": "15d8dea5c9ab4134b655dad7b5472f6f",
+    "episode_id": "walker-jumpman-tharun-m",
+    "mode": "walker",
+    "game": {
+      "name": "walker-jumpman-tharun-m",
+      "revision": "45be763",
+      "starter": "nikbearbrown/walker-jumpman@9387542",
+      "engine_version": "4.7.2.stable.official.ed1daf0bf"
+    },
+    "note": "Walker-mode walkthrough of walker-jumpman-tharun-m at revision 45be763. Gameplay is native 3840x2160 Godot Movie Maker capture driven through the real Input path; no teleports, no state writes, no disabled collision checks. B00 is an illustrative reconstruction, not a transcript.",
+    "student": "Tharun Maheswararao",
+    "course": "CSYE 7270 Fall 2026 · Assignment 1"
+  },
+  "beats": [
+    {
+      "beat_id": "B00",
+      "act": "ASK",
+      "role_note": "COLD OPEN / walker B00 — ClaudeComposerAsk. Illustrative reconstruction, not a transcript.",
+      "narration_text": "Hola, this is Liam, in for Bear. Today we play walker jumpman, extended. The starter is Bear's First Steps slice: a small Godot platformer with two gaps, one spike and a finish flag. This build keeps all of that and adds a new character and a new section with a fork in it. The prompt you are looking at is an illustrative reconstruction, not a saved transcript.",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.10",
+            "event": "card lands on cream"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Hola, Liam",
+            "topic": "WALKER · GAME WALKTHROUGH",
+            "segment": "walker-jumpman-tharun-m",
+            "command": "Please use Walker to convert my game design document about a wind-up tin automaton crossing a broken causeway, where the player must choose between a direct spiked terrace and a safe but longer road, into a playable Godot project.",
+            "runningText": "reading the GDD…",
+            "output": [
+              "■ walker-jumpman-tharun-m  ·  Godot 4.7.2",
+              "  CHARACTER  SPROCKET, a wind-up tin automaton",
+              "  SECTION    03 / THE FORK  ·  course 960px → 2080px",
+              "  FLAG       moved x=916 → x=1824",
+              "  RECONSTRUCTED PROMPT — illustrative, not a transcript"
+            ]
+          },
+          "rendered": {
+            "out": "media/B00.mp4",
+            "at": "2026-09-25T00:17:42.429201+00:00"
+          }
+        }
+      },
+      "estimated_duration_s": 22,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 18.86,
+      "audio_file": "mp3/beat-B00.mp3"
+    },
+    {
+      "beat_id": "B01",
+      "act": "BLUF",
+      "role_note": "walker B01 — what was actually built, with a correction. Hesitant writer.",
+      "narration_text": "Here is what was actually built, and one thing I got wrong on the way. The course goes from nine hundred and sixty pixels to two thousand and eighty, and the flag moves behind the new section, so you cannot finish without playing it. The correction: I sized the first platforms with the textbook jump height, v squared over two g, fifty-three point three pixels. I then measured the real engine. It gives fifty-six. The sixty hertz integrator applies the jump impulse for a full tick before gravity fully bites. Every gap you are about to see was re-sized against the measured number.",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "remotion",
+        "motion": "hold",
+        "show": [
+          {
+            "at": "0.10",
+            "event": "card lands on cream"
+          }
+        ],
+        "remotion": {
+          "pattern": "BrutalistHesitantWriter",
+          "props": {
+            "text": "Paper said the jump rises 53.3 pixels.\nThe engine measured 56.0.\nEvery gap was re-sized against the measurement.",
+            "face": "serif",
+            "fontSize": 96,
+            "lineSpacing": 1.35,
+            "align": "left",
+            "ink": "#2b2118"
+          },
+          "rendered": {
+            "out": "media/B01.mp4",
+            "at": "2026-09-25T00:26:54.012436+00:00"
+          }
+        }
+      },
+      "estimated_duration_s": 30,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 31.06,
+      "audio_file": "mp3/beat-B01.mp3"
+    },
+    {
+      "beat_id": "B02",
+      "act": "MECHANISM",
+      "role_note": "Gameplay — the character and the starter's own course.",
+      "narration_text": "That is SPROCKET, a wind-up tin automaton, replacing the starter's stack of flat rectangles. The winding key on its back always trails, so it flips sides when he turns. That is how you read facing.",
+      "shot": {
+        "type": "CAPTURE",
+        "source": "godot-movie-maker",
+        "motion": "hold",
+        "capture_clip": "high-road",
+        "label": "SCRIPTED INPUT",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "SPROCKET runs the starter's original course"
+          }
+        ]
+      },
+      "estimated_duration_s": 26,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 11.54,
+      "audio_file": "mp3/beat-B02.mp3"
+    },
+    {
+      "beat_id": "B03",
+      "act": "MECHANISM",
+      "role_note": "Gameplay — the new section opens: Junction and the two stepping stones.",
+      "narration_text": "Section three. A sixty-four pixel gap onto The Junction, then two stepping stones over real pits. You cannot overshoot these. The only way to miss is to leave early.",
+      "shot": {
+        "type": "CAPTURE",
+        "source": "godot-movie-maker",
+        "motion": "hold",
+        "capture_clip": "high-road",
+        "label": "SCRIPTED INPUT",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "The Junction, then the two narrow stepping stones"
+          }
+        ]
+      },
+      "estimated_duration_s": 30,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 9.69,
+      "audio_file": "mp3/beat-B03.mp3"
+    },
+    {
+      "beat_id": "B04",
+      "act": "MECHANISM",
+      "role_note": "Gameplay — real failure and real recovery.",
+      "narration_text": "So here is leaving early. Space goes down seventy pixels too soon, and he falls thirty-five pixels short. That is a real death from the game's own fall check. No retry key needed, the game restarts the attempt itself. And then the same run, played properly, all the way to the flag.",
+      "shot": {
+        "type": "CAPTURE",
+        "source": "godot-movie-maker",
+        "motion": "hold",
+        "capture_clip": "failure-recovery",
+        "label": "SCRIPTED INPUT",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "early jump, short fall, auto-retry, then completion"
+          }
+        ]
+      },
+      "estimated_duration_s": 30,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 15.53,
+      "audio_file": "mp3/beat-B04.mp3"
+    },
+    {
+      "beat_id": "B05",
+      "act": "MECHANISM",
+      "role_note": "Gameplay — the fork, high road.",
+      "narration_text": "The fork. That teal band is the take-off window, painted where the physics actually allows the jump. Forty-eight pixels up, a spike bank, then the flag.",
+      "shot": {
+        "type": "CAPTURE",
+        "source": "godot-movie-maker",
+        "motion": "hold",
+        "capture_clip": "high-road",
+        "label": "SCRIPTED INPUT",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "launch guide, 48px terrace climb, spike hop, flag"
+          }
+        ]
+      },
+      "estimated_duration_s": 28,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 8.7,
+      "audio_file": "mp3/beat-B05.mp3"
+    },
+    {
+      "beat_id": "B06",
+      "act": "MECHANISM",
+      "role_note": "Gameplay — the fork, low road. Same x positions, different y.",
+      "narration_text": "Or take the ground underneath. Up there he passed x seventeen sixty at y two forty-three. Down here, same x, y three nineteen. The climb out is past the flag, so he doubles back. Two and a quarter seconds slower, measured.",
+      "shot": {
+        "type": "CAPTURE",
+        "source": "godot-movie-maker",
+        "motion": "hold",
+        "capture_clip": "low-road",
+        "label": "SCRIPTED INPUT",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "under the terrace, buttress climb, doubling back to the flag"
+          }
+        ]
+      },
+      "estimated_duration_s": 32,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 12.39,
+      "audio_file": "mp3/beat-B06.mp3"
+    },
+    {
+      "beat_id": "B07",
+      "act": "MECHANISM",
+      "role_note": "CAUSE AND EFFECT — one source change, one visible consequence. Before-frame is a deliberately reconstructed build and is labelled on screen.",
+      "narration_text": "Here is the trap this starter sets, and the one change that fixes it. The starter builds spike triggers from the level data, but it draws the spikes with the y coordinate hard-coded to the ground line. Two copies of the same geometry, and only one of them reads the data. So put a hazard up on a raised terrace and you get this: the spikes painted on the ground, sixty-four pixels below the trigger SPROCKET is actually walking into. An invisible killer and a decoration that cannot hurt anyone. The fix is one function. Both the trigger builder and the renderer now call it, so they cannot drift apart. Same spot, after.",
+      "shot": {
+        "type": "CAPTURE",
+        "source": "stills-comparison",
+        "motion": "hold",
+        "capture_clip": "cause-effect",
+        "label": "STARTER DRAW CODE + NEW LEVEL DATA",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "before: starter draw code against the new level data"
+          },
+          {
+            "at": "0.60",
+            "event": "after: hazard_triangle() drives both trigger and art"
+          }
+        ]
+      },
+      "estimated_duration_s": 27,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 32.95,
+      "audio_file": "mp3/beat-B07.mp3"
+    },
+    {
+      "beat_id": "B08",
+      "act": "MECHANISM",
+      "role_note": "Gameplay — pause, resume, manual restart, menu.",
+      "narration_text": "Escape mid-jump freezes him at y two sixty-four, and forty-five frames later it is still two sixty-four. Enter resumes with no free jump. R restarts, and retries stay at zero.",
+      "shot": {
+        "type": "CAPTURE",
+        "source": "godot-movie-maker",
+        "motion": "hold",
+        "capture_clip": "controls",
+        "label": "SCRIPTED INPUT",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "Escape freeze, Enter resume, R restart, M to menu"
+          }
+        ]
+      },
+      "estimated_duration_s": 30,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 11.22,
+      "audio_file": "mp3/beat-B08.mp3"
+    },
+    {
+      "beat_id": "B09",
+      "act": "FALSIFIABILITY",
+      "role_note": "Gameplay — completion and replay.",
+      "narration_text": "Completion, and Enter to play again with the counters reset. Every frame came through the real input path. Nothing teleported, no state written, no collision check switched off.",
+      "shot": {
+        "type": "CAPTURE",
+        "source": "godot-movie-maker",
+        "motion": "hold",
+        "capture_clip": "replay",
+        "label": "SCRIPTED INPUT",
+        "show": [
+          {
+            "at": "0.05",
+            "event": "completion card, then a real replay"
+          }
+        ]
+      },
+      "estimated_duration_s": 20,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 10.13,
+      "audio_file": "mp3/beat-B09.mp3"
+    },
+    {
+      "beat_id": "B10",
+      "act": "VERDICT",
+      "role_note": "VERDICT — observed working, versus untested and uncertain.",
+      "narration_text": "The verdict. Fifty-seven automated checks, zero failures: the starter's twenty-five mechanics checks, its nine keyboard checks byte-identical, and twenty-three new ones. What is uncertain is smaller but real. The terrace jump has eight pixels of margin. I predicted a first-timer would bonk the underside before the painted guide taught the timing, and when the level was actually played, that did not happen. That prediction is marked refuted in the change brief rather than deleted. But one person played it, and it was the person who placed the platforms and already knew where the window was. That is the weakest sample there is.",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "remotion",
+        "motion": "hold",
+        "show": [
+          {
+            "at": "0.10",
+            "event": "card lands on cream"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeVerdictArtifact",
+          "props": {
+            "artifactTitle": "walker-jumpman-tharun-m",
+            "artifactHeading": "VERDICT · revision 45be763",
+            "brandLabel": "WALKER · GODOT 4.7.2",
+            "artifactLines": [
+              "OBSERVED WORKING",
+              "  57 automated checks, 0 failures",
+              "  both roads complete · real death · real retry",
+              "  pause / resume / restart / menu unchanged",
+              "UNCERTAIN",
+              "  terrace jump margin: 8px of 56px apex",
+              "  bonk prediction REFUTED by playtest — recorded, not deleted",
+              "  one playtester, and he designed the level",
+              "NOT BUILT",
+              "  cherries · settings · web export · audio"
+            ]
+          },
+          "rendered": {
+            "out": "media/B10.mp4",
+            "at": "2026-09-25T00:19:00.423449+00:00"
+          }
+        }
+      },
+      "estimated_duration_s": 36,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 32.7,
+      "audio_file": "mp3/beat-B10.mp3"
+    },
+    {
+      "beat_id": "B11",
+      "act": "YOUR_TURN",
+      "role_note": "YOUR TURN — one concrete experiment. Liam signs off here.",
+      "narration_text": "Your turn. The next improvement is the limitation I can name most precisely. That painted launch guide is positioned by hand. Move the terrace and forget to move the paint, and the picture disagrees with the physics again, which is exactly the bug this build fixed everywhere else. So compute the guide from the measured take-off window at load time, the way the spikes already derive their shape. Then play it, take the low road first, and tell me whether doubling back reads as a decision or just as getting lost. Liam, in for Bear.",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "remotion",
+        "motion": "type-on",
+        "show": [
+          {
+            "at": "0.10",
+            "event": "card lands on cream"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeComposerAsk",
+          "props": {
+            "greeting": "Your turn",
+            "topic": "WALKER · YOUR TURN",
+            "segment": "one concrete experiment",
+            "command": "Derive the launch-guide band from the measured take-off window at load time, so the paint and the physics cannot disagree.",
+            "runningText": "over to you…",
+            "output": [
+              "■ why this one",
+              "  the guide is the last hand-placed number in the level",
+              "  every other marker is derived from level data",
+              "  hazard_triangle() already proves the pattern works"
+            ]
+          },
+          "rendered": {
+            "out": "media/B11.mp4",
+            "at": "2026-09-25T00:20:04.195822+00:00"
+          }
+        }
+      },
+      "estimated_duration_s": 34,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 28.92,
+      "audio_file": "mp3/beat-B11.mp3"
+    },
+    {
+      "beat_id": "B12",
+      "act": "OUTRO",
+      "role_note": "OUTRO-LOCK — title restate, @NikBearBrown, mascot. Spoken, never scored.",
+      "narration_text": "That was Walker Jumpman, Extended. At Nik Bear Brown.",
+      "shot": {
+        "type": "GRAPHIC",
+        "source": "remotion",
+        "motion": "hold",
+        "show": [
+          {
+            "at": "0.10",
+            "event": "card lands on cream"
+          }
+        ],
+        "remotion": {
+          "pattern": "ClaudeTitleOutro",
+          "props": {
+            "title": "Walker Jumpman, Extended",
+            "slug": "claude-liam-walker-jumpman-tharun-m-walkthrough"
+          },
+          "rendered": {
+            "out": "media/B12.mp4",
+            "at": "2026-09-25T00:20:19.792298+00:00"
+          }
+        }
+      },
+      "estimated_duration_s": 5,
+      "engine": "kokoro",
+      "voice": "am_onyx",
+      "actual_duration_s": 3.8,
+      "audio_file": "mp3/beat-B12.mp3"
+    }
+  ]
+}
