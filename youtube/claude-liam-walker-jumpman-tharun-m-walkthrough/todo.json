@@ -1,0 +1,192 @@
+{
+  "video": "claude-liam-walker-jumpman-tharun-m-walkthrough",
+  "metadata": {
+    "title": "Walker Jumpman, Extended",
+    "slug": "claude-liam-walker-jumpman-tharun-m-walkthrough",
+    "topic": "WALKER \u00b7 GAME WALKTHROUGH",
+    "kind": "godot-walkthrough",
+    "playlist": "Walker",
+    "brand": "claude-liam",
+    "audience": "CSYE 7270 reviewers and Walker users extending the starter",
+    "register": "Walkthrough",
+    "engine": "kokoro",
+    "voice": "am_onyx",
+    "voice_kokoro": "am_onyx",
+    "palette": "claude",
+    "style_preset": "claude",
+    "aspect_ratio": "16:9",
+    "captions": false,
+    "channel_title": "@NikBearBrown",
+    "channel": "@NikBearBrown",
+    "presenter": "Liam (in for Bear)",
+    "persona": "Liam (in for Bear)",
+    "run_id": "15d8dea5c9ab4134b655dad7b5472f6f",
+    "episode_id": "walker-jumpman-tharun-m",
+    "mode": "walker",
+    "game": {
+      "name": "walker-jumpman-tharun-m",
+      "revision": "45be763",
+      "starter": "nikbearbrown/walker-jumpman@9387542",
+      "engine_version": "4.7.2.stable.official.ed1daf0bf"
+    },
+    "note": "Walker-mode walkthrough of walker-jumpman-tharun-m at revision 45be763. Gameplay is native 3840x2160 Godot Movie Maker capture driven through the real Input path; no teleports, no state writes, no disabled collision checks. B00 is an illustrative reconstruction, not a transcript.",
+    "student": "Tharun Maheswararao",
+    "course": "CSYE 7270 Fall 2026 \u00b7 Assignment 1",
+    "build": {
+      "at": "2026-09-24T21:43:27",
+      "cut": "review",
+      "filled": 13,
+      "of": 13,
+      "slates": [],
+      "skin_warnings": []
+    }
+  },
+  "source_of_truth": "beat_sheet.json \u2014 edit the sheet, not this file",
+  "beats_total": 13,
+  "beats_open": 0,
+  "beats": [
+    {
+      "beat_id": "B00",
+      "status": "filled",
+      "on_disk": "media/B00.mp4",
+      "method": "remotion",
+      "who": "pipeline",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B00.mp4",
+      "label": "Hola, this is Liam, in for Bear. Today we play walker jumpman, extended. The starter is Bear's First"
+    },
+    {
+      "beat_id": "B01",
+      "status": "filled",
+      "on_disk": "media/B01.mp4",
+      "method": "remotion",
+      "who": "pipeline",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B01.mp4",
+      "label": "Here is what was actually built, and one thing I got wrong on the way. The course goes from nine hun"
+    },
+    {
+      "beat_id": "B02",
+      "status": "filled",
+      "on_disk": "media/B02.mp4",
+      "method": "user-capture",
+      "who": "human",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B02.mp4",
+      "label": "That is SPROCKET, a wind-up tin automaton, replacing the starter's stack of flat rectangles. The win"
+    },
+    {
+      "beat_id": "B03",
+      "status": "filled",
+      "on_disk": "media/B03.mp4",
+      "method": "user-capture",
+      "who": "human",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B03.mp4",
+      "label": "Section three. A sixty-four pixel gap onto The Junction, then two stepping stones over real pits. Yo"
+    },
+    {
+      "beat_id": "B04",
+      "status": "filled",
+      "on_disk": "media/B04.mp4",
+      "method": "user-capture",
+      "who": "human",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B04.mp4",
+      "label": "So here is leaving early. Space goes down seventy pixels too soon, and he falls thirty-five pixels s"
+    },
+    {
+      "beat_id": "B05",
+      "status": "filled",
+      "on_disk": "media/B05.mp4",
+      "method": "user-capture",
+      "who": "human",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B05.mp4",
+      "label": "The fork. That teal band is the take-off window, painted where the physics actually allows the jump."
+    },
+    {
+      "beat_id": "B06",
+      "status": "filled",
+      "on_disk": "media/B06.mp4",
+      "method": "user-capture",
+      "who": "human",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B06.mp4",
+      "label": "Or take the ground underneath. Up there he passed x seventeen sixty at y two forty-three. Down here,"
+    },
+    {
+      "beat_id": "B07",
+      "status": "filled",
+      "on_disk": "media/B07.mp4",
+      "method": "user-capture",
+      "who": "human",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B07.mp4",
+      "label": "Here is the trap this starter sets, and the one change that fixes it. The starter builds spike trigg"
+    },
+    {
+      "beat_id": "B08",
+      "status": "filled",
+      "on_disk": "media/B08.mp4",
+      "method": "user-capture",
+      "who": "human",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B08.mp4",
+      "label": "Escape mid-jump freezes him at y two sixty-four, and forty-five frames later it is still two sixty-f"
+    },
+    {
+      "beat_id": "B09",
+      "status": "filled",
+      "on_disk": "media/B09.mp4",
+      "method": "user-capture",
+      "who": "human",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B09.mp4",
+      "label": "Completion, and Enter to play again with the counters reset. Every frame came through the real input"
+    },
+    {
+      "beat_id": "B10",
+      "status": "filled",
+      "on_disk": "media/B10.mp4",
+      "method": "remotion",
+      "who": "pipeline",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B10.mp4",
+      "label": "The verdict. Fifty-seven automated checks, zero failures: the starter's twenty-five mechanics checks"
+    },
+    {
+      "beat_id": "B11",
+      "status": "filled",
+      "on_disk": "media/B11.mp4",
+      "method": "remotion",
+      "who": "pipeline",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B11.mp4",
+      "label": "Your turn. The next improvement is the limitation I can name most precisely. That painted launch gui"
+    },
+    {
+      "beat_id": "B12",
+      "status": "filled",
+      "on_disk": "media/B12.mp4",
+      "method": "remotion",
+      "who": "pipeline",
+      "scene_hint": null,
+      "prompt": null,
+      "slot": "media/B12.mp4",
+      "label": "That was Walker Jumpman, Extended. At Nik Bear Brown."
+    }
+  ]
+}

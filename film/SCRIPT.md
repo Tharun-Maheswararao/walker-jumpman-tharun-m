@@ -11,7 +11,10 @@ Read at a measured pace. Every factual claim below is checkable against a
 committed artifact; the cross-references in **[brackets]** are for the editor
 and are not spoken.
 
-> **Status: not yet rendered.** Blocked on the course-provided Brutalist skill.
+> **Status: RENDERED.** The as-delivered narration is in the reel's
+> `beat_sheet.json` (`narration_text` per beat); several gameplay beats were
+> shortened during the build so narration would not outrun the action. Where
+> this document and the reel differ, the reel is what was spoken.
 
 ---
 

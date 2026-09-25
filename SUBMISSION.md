@@ -15,9 +15,9 @@
 | **Game-source revision to be shown in the film** | `5bdd71e` — *Correct a stale course width in the route-budget comment*. This is the **final game-source revision**; every commit after it is documentation only and must not touch `godot/`. |
 | **Godot version** | `4.7.2.stable.official.ed1daf0bf` |
 | **Operating system** | macOS 15.6 (Darwin 24.6.0), Apple M4 |
-| **Final film URL** | ⬜ *pending render — see "Film status" below* |
-| **Final film filename** | ⬜ *pending render* |
-| **Final film SHA-256** | ⬜ *pending render* |
+| **Final film URL** | ⬜ *upload `exports/landscape/…mp4` to course media storage, then paste the link* |
+| **Final film filename** | `claude-liam-walker-jumpman-tharun-m-walkthrough.mp4` |
+| **Final film SHA-256** | `f612fd0e77035836a25f762d415ae2c6895b69b5651fd4f4be2d67a530689ea8` |
 
 **Revision relationship.** The film demonstrates game source `5bdd71e`. Any
 commits after it add film documentation only and **do not change the
@@ -73,7 +73,8 @@ against arithmetic.
    (the "R: retry" label). A single run by the level's designer is still the
    weakest possible sample.
 2. **No second playtester** is claimed.
-3. **The film is not rendered.** See below.
+3. **The film shows revision `3aa05bb`**, which is the final game-source
+   revision. Later commits are documentation only.
 4. **The terrace jump has 8 px of margin** against a 56 px apex. I predicted a
    first-timer would bonk the underside; the playtest refuted that
    (CHANGE-BRIEF R6). One biased data point, not proof the jump is forgiving.
@@ -90,26 +91,38 @@ against arithmetic.
 
 ## Film status
 
-**The film is not rendered.** The required Brutalist `godot-waikthrough` skill
-(walker modifier) is not present in this checkout and no course-provided copy
-was available on the machine used. Per the assignment's own instruction — *"If
-your checkout lacks the skill, request the course-provided version before
-proceeding"* — the course-provided version has been requested rather than
-substituting a public repository that may differ from it.
+**Rendered.** `godot-waikthrough` (walker modifier) from the course-provided
+[nikbearbrown/brutalist.art](https://github.com/nikbearbrown/brutalist.art).
 
-Prepared and committed: [`film/BEAT-SHEET.md`](film/BEAT-SHEET.md) (structure,
-shot list, capture and labelling rules, quality gate) and
-[`film/SCRIPT.md`](film/SCRIPT.md) (full narration), together with the real
-captured gameplay evidence the edit cuts against.
+| Field | Value |
+| --- | --- |
+| Path | `youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/exports/landscape/claude-liam-walker-jumpman-tharun-m-walkthrough.mp4` |
+| Duration | 3:47 (227.6 s) · 13 beats |
+| Format | 3840×2160 H.264, 30 fps, AAC 48 kHz stereo, mean −27.0 dB |
+| SHA-256 | `f612fd0e77035836a25f762d415ae2c6895b69b5651fd4f4be2d67a530689ea8` |
+| Narration | Liam, local Kokoro `am_onyx` (free, no key) |
+| Game-source revision shown | `3aa05bb` |
 
-**On render, update:** this table, the film table in README.md, and the Canvas
-note — with filename, SHA-256, URL, and confirmation that the demonstrated
-source revision is unchanged.
+Structure is walker mode: B00 ClaudeComposerAsk (labelled a reconstruction,
+not a transcript) → B01 what was built → gameplay body → **Verdict** → **Your
+Turn** → regular outro under OUTRO-LOCK.
 
-Compute the checksum with:
+**Gates:** GATE T typography 0 failures · GATE V visual QC 0 blockers, 0 majors
+· `verify_walkthrough.py` PASS with 20 implemented features, 20 evidence
+intervals, every capture natively 3840×2160.
+
+All gameplay is real engine output captured through the real `Input` path — no
+teleports, no state writes, no disabled collision checks. Scripted-input
+captures, held frames and the one deliberately reconstructed before-frame are
+each labelled on screen. The game is silent; no game audio was fabricated.
+
+**The MP4 is excluded from git by size.** Upload it to the designated course
+media storage and paste the link into the table above and in the Canvas note.
+
+Verify the checksum with:
 
 ```bash
-shasum -a 256 <final-film-file>
+shasum -a 256 youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/exports/landscape/claude-liam-walker-jumpman-tharun-m-walkthrough.mp4
 ```
 
 ## Contributions

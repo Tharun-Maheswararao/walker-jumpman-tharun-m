@@ -1,3 +1,0 @@
-{"capture": "Godot Movie Maker (--write-movie --fixed-fps 30), deterministic offline render of the real viewport at 3840x2160", "clip": "menu", "deaths": 0, "elapsed_s": 2.96666666666666, "engine": "4.7.2-stable (official)", "final_state": 1, "fps": 30, "frames": 148, "input_method": "real Input singleton: Input.action_press/action_release plus parsed InputEventKey; test_control is false", "no_state_writes": true, "no_teleport": true}
-{"edge": "tap", "frame": 63, "input": "Enter", "seconds": 2.1}
-{"event": "Enter started the session from the title card", "frame": 63, "seconds": 2.1}

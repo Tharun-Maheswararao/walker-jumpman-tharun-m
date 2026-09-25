@@ -8,11 +8,10 @@ quality checks
 runtime to fill.
 **Game-source revision to demonstrate:** `5bdd71e` (the final game-source revision; later commits are documentation only)
 
-> **Status: not yet rendered.** The Brutalist skill is not present in this
-> checkout; the course-provided version has been requested. This document and
-> [SCRIPT.md](SCRIPT.md) are the plan. Timings are targets and will be conformed
-> to the skill's own templates for the Walker opening, the summary card, and the
-> Verdict → Your Turn → outro block.
+> **Status: RENDERED.** 3840×2160, 3:47, 13 beats. The authoritative, as-built
+> beat sheet is `youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/beat_sheet.json`,
+> with the as-built shot list in that folder's `SHOTLIST.md`. This document is
+> the plan it was built from; where the two differ, the reel folder is correct.
 
 ---
 

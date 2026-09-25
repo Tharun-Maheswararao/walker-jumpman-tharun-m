@@ -205,22 +205,27 @@ and an account of exactly what changed in that fixture are in
 
 ## The film
 
-> **Status: not rendered.** The required Brutalist `godot-waikthrough` skill
-> (walker modifier) is not present in this checkout, and no course-provided copy
-> was available on this machine. Following the assignment's own instruction, the
-> course-provided version has been requested rather than substituting a public
-> repository that may differ from it.
->
-> What exists now: the complete plan and the gameplay evidence it will cut
-> against — [film/BEAT-SHEET.md](film/BEAT-SHEET.md) and
-> [film/SCRIPT.md](film/SCRIPT.md).
+**Rendered** with the course-provided Brutalist `godot-waikthrough` skill
+(walker modifier) from [nikbearbrown/brutalist.art](https://github.com/nikbearbrown/brutalist.art),
+at native 4K with local Kokoro narration (Liam, `am_onyx`).
 
 | Field | Value |
 | --- | --- |
-| Final film URL | *pending render* |
-| Filename | *pending render* |
-| SHA-256 | *pending render* |
-| Game-source revision shown | *pending render* |
+| Filename | `claude-liam-walker-jumpman-tharun-m-walkthrough.mp4` |
+| Duration | 3:47 (227.6 s) |
+| Format | 3840×2160, H.264, 30 fps, AAC 48 kHz stereo |
+| Game-source revision shown | `3aa05bb` |
+| SHA-256 | `f612fd0e77035836a25f762d415ae2c6895b69b5651fd4f4be2d67a530689ea8` |
+| Final film URL | *upload to course media storage, then link here* |
+
+The reel folder `youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/`
+holds the beat sheet, narration, `coverage.json`, the capture input logs, the
+fact-check, and both QC reports. The MP4 and the raw captures are excluded from
+git by size.
+
+**Gates passed:** GATE T typography 0 failures · GATE V visual QC 0 blockers,
+0 majors · `verify_walkthrough.py` 20 implemented features, 20 evidence
+intervals, every capture natively 3840×2160.
 
 MP3, MP4 and any file over 25 MB are excluded from this repository by
 `.gitignore`; the film will live in the designated course media storage and be

@@ -248,24 +248,40 @@ placed by hand. If the geometry moved and I forgot to move the band, no test
 would notice. The hazard and finish marker no longer have that weakness because
 they share one geometry function; the guide band still does.
 
-## 8. The film toolkit is not installed
+## 8. The film toolkit — four environment failures before a single frame
 
-**What happened.** The Brutalist `godot-waikthrough` skill is not present in this
-checkout, and no course-provided copy is available on this machine. A public
-`brutalist.art` repository exists whose setup pulls a ~340 MB Kokoro TTS model
-plus Node/Remotion dependencies.
+**Human decision.** I supplied the course-provided toolkit,
+[nikbearbrown/brutalist.art](https://github.com/nikbearbrown/brutalist.art),
+rather than the public fork the AI had found by search.
 
-**Human decision.** Follow the assignment's own instruction — "If your checkout
-lacks the skill, request the course-provided version before proceeding" — rather
-than substituting a public repository that may differ from the course version.
+Four things broke before anything could render. None of them were fixed by
+editing the toolkit.
 
-**Response.** Everything the film needs that does *not* depend on the toolkit is
-prepared and committed: `film/BEAT-SHEET.md`, `film/SCRIPT.md`, and the real
-captured gameplay evidence the film will cut against. The render is blocked on
-obtaining the skill.
+**8.1 `./setup` never prints its readiness table.** Its ElevenLabs guard greps
+the whole tree and matches the toolkit's *own* bundled examples under
+`youtube/brutalist/…`, then exits 1 — before the dependency table. `--install`
+still installs, because the install block runs first. *Response:* verified every
+dependency by hand instead. The guard was left alone; it is the toolkit's bug,
+not mine to silently patch.
 
-**Honest status:** the film is **not rendered**. `film/` contains the plan, not
-the product, and README and SUBMISSION say so rather than implying otherwise.
+**8.2 Python 3.13 cannot satisfy `requirements.txt`.** `manim>=0.18,<0.19`
+requires Python `<3.13`. pip resolves the whole file atomically, so that one
+unsatisfiable pin aborted the install and kokoro-onnx and mutagen never landed
+either — the failure looked like "nothing installed" rather than "manim is
+incompatible". *Response:* a Python 3.12 virtualenv for the toolkit.
+
+**8.3 `manimpango` needs native pango/cairo**, not on the machine.
+*Response:* `brew install pango cairo pkg-config`.
+
+**8.4 Homebrew's ffmpeg has no `drawtext`** (built without libfreetype), so
+on-screen labels could not be burned the obvious way. The toolkit anticipates
+this — `compile.py` has a `has_drawtext()` check with a PIL fallback.
+*Response:* generated label PNGs with PIL and composited them with `overlay`.
+
+**What I learned.** Every one of these presented as a different symptom than its
+cause. The most misleading was 8.2: the visible failure was two unrelated
+packages missing, and the actual cause was a version pin on a third package I
+was not even using yet.
 
 ## 9. What is still mine, and cannot be delegated
 
@@ -277,7 +293,9 @@ the AI's, and the honest answer is that the implementation was the AI's.
    who did not design the level; one run by the author is the weakest possible
    sample and TEST-REPORT §12.1 says so.
 2. **A second playtester.** Still none recorded. Not invented.
-3. **The film.** Blocked on the course skill (§8).
+3. **The film.** Rendered — see §13. What I own about it: I am accountable for
+   every claim in it, and for the decision to fix the two QC findings in the
+   game and the framing rather than in the checker.
 4. **Being able to explain all of it.** The concepts I need to be able to defend
    without notes: why the measured apex is 56 px and not 53.3 px; why stacked
    lanes are impossible here (the 84 px head-reach argument); why
@@ -378,3 +396,46 @@ did not just find a bug, it explained a design property back to me.
 
 **Traceability.** TEST-REPORT §7.2, §7.4 and §7.5, CHANGE-BRIEF R6,
 `godot/ui/hud.gd`, `stones-cannot-be-overshot` in `godot/tests/test_extension.gd`.
+
+## 13. The film, and three gates that were right
+
+The walkthrough rendered at 3840×2160, 3:47, thirteen beats, with local Kokoro
+narration. `./art final` refused it three times first, and each refusal was
+correct.
+
+**GATE T said my level's signage was too small.** A 36px text run against a
+41px floor. I did not take the checker's word for it: I extracted the frame, ran
+its own `text_run_bboxes` detector, and cropped the blob. It was the word
+**"Two"** in my own in-world sign *"Two stones. Then pick a road."*, at font
+size 13. The checker was right. Fixed in the **game** — label sizes 13→17 and
+15→20 — so the signs are easier to read while playing, not only on film. I did
+not add the beat to the exemption list, and I did not crop the capture to dodge
+the measurement. Cost: re-capturing every clip and re-rendering.
+
+**GATE T also said text crossed the title-safe box.** That text was the game's
+*own HUD*, which lives at the very frame edge. Moving a game's UI to satisfy a
+film check would be changing the game to suit the film, so instead each capture
+is inset to exactly 90% on the game's own cream — which is what the toolkit's
+own `GodotDesignFigure` slot does for engine captures. The files in `capture/`
+stay unscaled native 4K.
+
+**GATE V said five beats were low-contrast.** Here the check was measuring the
+wrong thing: the frame average is dominated by the game's cream sky and pale
+hills, which is the intended background, not a scrim over text. The toolkit has
+a documented mechanism for exactly this — `qc.contrast_regions` with a written
+reason — which replaces *only* the whole-frame average while every other check
+still runs. I used it and wrote down why.
+
+**And one blocker that was purely my fault:** the B01 card's text crossed the
+title-safe right edge and filled 28% of the safe area. Rewritten as eight
+shorter lines.
+
+**Two defects no gate caught.** Both came from reading my own capture logs:
+landmarks named as outcomes ("landed on stone 2") when they only test x — false
+in the one clip where the player was falling past that x — and a failure clip
+that died by running off a platform while its own label claimed an early jump.
+Both fixed so the footage fails the way the narration says it does.
+
+**Human/AI split.** The AI built the pipeline, drove the captures, authored the
+beat sheet and coverage contract, and diagnosed all three gates. I supplied the
+toolkit, and I own every claim the film makes.

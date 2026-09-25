@@ -29,4 +29,6 @@ youtube/**/capture/*.mp4
 youtube/**/media/
 youtube/**/audio/
 youtube/**/exports/
+youtube/**/clips/
+youtube/**/mp3/
 evidence/film/

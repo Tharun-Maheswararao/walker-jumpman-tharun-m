@@ -1,0 +1,379 @@
+{
+  "schema_version": 1,
+  "game": {
+    "name": "walker-jumpman-tharun-m",
+    "build_id": "97126e2f4b05ec29e3067b6f616459eab5758055dcebc44bfedd048b8dee1548",
+    "revision": "3aa05bb",
+    "engine": "4.7.2.stable.official.ed1daf0bf",
+    "starter": "nikbearbrown/walker-jumpman@9387542"
+  },
+  "captures": {
+    "high-road": {
+      "path": "capture/high-road.mp4",
+      "sha256": "e0acdecd049478d4a5ea012b08f2622ebec2169e956d5c1b3bb0d7545e688e29",
+      "build_id": "97126e2f4b05ec29e3067b6f616459eab5758055dcebc44bfedd048b8dee1548",
+      "method": "scripted-input",
+      "input_log": "capture/high-road-inputs.jsonl"
+    },
+    "low-road": {
+      "path": "capture/low-road.mp4",
+      "sha256": "b7ed6a5a37487c4123076948e3758fc4bd4a924a94aad480449da610432ce1c7",
+      "build_id": "97126e2f4b05ec29e3067b6f616459eab5758055dcebc44bfedd048b8dee1548",
+      "method": "scripted-input",
+      "input_log": "capture/low-road-inputs.jsonl"
+    },
+    "failure-recovery": {
+      "path": "capture/failure-recovery.mp4",
+      "sha256": "a64d92b1d9bf02fd543fa21cdaaf078500aec400252f91c03606e0a51a36d554",
+      "build_id": "97126e2f4b05ec29e3067b6f616459eab5758055dcebc44bfedd048b8dee1548",
+      "method": "scripted-input",
+      "input_log": "capture/failure-recovery-inputs.jsonl"
+    },
+    "controls": {
+      "path": "capture/controls.mp4",
+      "sha256": "953054682a78b1b52be17f0ae552d7c83caf5e340269e5c2f37a911a7d68b6da",
+      "build_id": "97126e2f4b05ec29e3067b6f616459eab5758055dcebc44bfedd048b8dee1548",
+      "method": "scripted-input",
+      "input_log": "capture/controls-inputs.jsonl"
+    },
+    "replay": {
+      "path": "capture/replay.mp4",
+      "sha256": "730e1e7a6b8ddfc122f416daad7e71c53a8d4ec51958ce53138d6ee71215942e",
+      "build_id": "97126e2f4b05ec29e3067b6f616459eab5758055dcebc44bfedd048b8dee1548",
+      "method": "scripted-input",
+      "input_log": "capture/replay-inputs.jsonl"
+    }
+  },
+  "features": [
+    {
+      "id": "menu-and-start",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "controls",
+          "beat_id": "B08",
+          "start_s": 0.3,
+          "action_s": 1.77,
+          "end_s": 3.0,
+          "observation": "Title card is on screen; Enter is pressed at 1.77s and the session starts with SPROCKET at the spawn.",
+          "riff": "The menu is one screen with one affordance. Nothing to configure before you can find out whether you like the jump."
+        }
+      ]
+    },
+    {
+      "id": "run-and-turn",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B02",
+          "start_s": 0.3,
+          "action_s": 0.8,
+          "end_s": 3.0,
+          "observation": "Holding move_right accelerates SPROCKET to the 160px/s cap; the winding key sits on the trailing side.",
+          "riff": "Facing is encoded in the silhouette rather than in a colour, so you can read direction from the shape alone."
+        }
+      ]
+    },
+    {
+      "id": "fixed-jump",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B02",
+          "start_s": 0.5,
+          "action_s": 0.8,
+          "end_s": 2.4,
+          "observation": "Space at x=138 clears the starter's first gap; one jump only, no double jump available in the air.",
+          "riff": "The jump is a fixed 56px rise measured in this engine, not the 53.3px the textbook formula predicts."
+        }
+      ]
+    },
+    {
+      "id": "original-course",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B02",
+          "start_s": 1.4,
+          "action_s": 2.0,
+          "end_s": 5.0,
+          "observation": "The starter's own spike at x=320 and both original ledges are crossed unchanged.",
+          "riff": "Every original solid, the original spike and the spawn keep their exact coordinates; only the finish moved."
+        }
+      ]
+    },
+    {
+      "id": "section-03-junction",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B03",
+          "start_s": 5.9,
+          "action_s": 6.4,
+          "end_s": 7.6,
+          "observation": "A 64px gap from the starter's last platform lands SPROCKET on The Junction at x=1024.",
+          "riff": "The section opens on the same gap width as the starter's very first gap, so it asks for something already proved."
+        }
+      ]
+    },
+    {
+      "id": "stepping-stones",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B03",
+          "start_s": 7.2,
+          "action_s": 7.87,
+          "end_s": 9.6,
+          "observation": "Two 64px stones over open pits, landed at 7.87s and 8.70s, then the ground run at 9.50s.",
+          "riff": "Landing windows reach 24px beyond the furthest a jump can carry, so committing always lands and only leaving early misses."
+        }
+      ]
+    },
+    {
+      "id": "launch-guide",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B05",
+          "start_s": 9.6,
+          "action_s": 10.0,
+          "end_s": 10.6,
+          "observation": "The painted chevron band on the ground marks the take-off window; SPROCKET jumps from it at x=1600.",
+          "riff": "The paint sits on the measured take-off window, so the marking and the physics describe the same span."
+        }
+      ]
+    },
+    {
+      "id": "terrace-high-road",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B05",
+          "start_s": 9.9,
+          "action_s": 10.4,
+          "end_s": 11.3,
+          "observation": "A 48px climb puts SPROCKET on the terrace at y=265.5, above the ground he was on a moment earlier.",
+          "riff": "Forty-eight pixels against a measured 56px apex: the hardest jump in the game, with 8px of margin."
+        }
+      ]
+    },
+    {
+      "id": "terrace-spike-bank",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B05",
+          "start_s": 10.6,
+          "action_s": 11.0,
+          "end_s": 11.4,
+          "observation": "The raised spike bank at x=1760 is drawn on the terrace walkway exactly where its trigger is, and is hopped.",
+          "riff": "Art and trigger now come from one function, so a raised hazard cannot be painted 64px away from the thing that kills you."
+        }
+      ]
+    },
+    {
+      "id": "low-road-under-terrace",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "low-road",
+          "beat_id": "B06",
+          "start_s": 9.9,
+          "action_s": 11.0,
+          "end_s": 12.1,
+          "observation": "On this road SPROCKET passes x=1760 at y=319.9 with on_floor true: on the ground, underneath the terrace.",
+          "riff": "Eight pixels of headroom. It is walkable precisely because the low road never requires a jump."
+        }
+      ]
+    },
+    {
+      "id": "climb-out-and-double-back",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "low-road",
+          "beat_id": "B06",
+          "start_s": 11.9,
+          "action_s": 12.47,
+          "end_s": 15.5,
+          "observation": "SPROCKET overshoots the flag to the buttress at x=1995, turns, jumps left onto the terrace and completes at x=1851.",
+          "riff": "The safe road's cost is distance, not danger: the only way up is past the flag, so you pay 2.28 seconds to avoid the spikes."
+        }
+      ]
+    },
+    {
+      "id": "relocated-finish",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B09",
+          "start_s": 10.9,
+          "action_s": 11.4,
+          "end_s": 13.4,
+          "observation": "The goal Area2D at x=1824 fires on the terrace and the completion card appears.",
+          "riff": "The flag moved from 916 to 1824, so the new section cannot be skipped by either road."
+        }
+      ]
+    },
+    {
+      "id": "fall-death",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "failure-recovery",
+          "beat_id": "B04",
+          "start_s": 7.1,
+          "action_s": 7.87,
+          "end_s": 8.3,
+          "observation": "Space pressed 70px early leaves The Junction short; SPROCKET is logged at y=435.9, below the 430 fall line, and dies.",
+          "riff": "The only failure this geometry permits: you cannot overshoot a stone, so every miss is a jump taken too early."
+        }
+      ]
+    },
+    {
+      "id": "auto-retry",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "failure-recovery",
+          "beat_id": "B04",
+          "start_s": 7.8,
+          "action_s": 8.43,
+          "end_s": 10.0,
+          "observation": "The retry card holds for about half a second and the attempt restarts at the spawn without any key press.",
+          "riff": "No lives, no menu, no keystroke. The cost of dying is the half second it takes to get you back."
+        }
+      ]
+    },
+    {
+      "id": "recovery-completion",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "failure-recovery",
+          "beat_id": "B04",
+          "start_s": 18.8,
+          "action_s": 19.57,
+          "end_s": 21.2,
+          "observation": "The same run, played correctly after the death, reaches the flag with deaths=1.",
+          "riff": "Failure and recovery in one unbroken take: the retry counter is the only thing that remembers."
+        }
+      ]
+    },
+    {
+      "id": "pause-and-resume",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "controls",
+          "beat_id": "B08",
+          "start_s": 3.0,
+          "action_s": 3.23,
+          "end_s": 5.0,
+          "observation": "Escape mid-jump freezes SPROCKET at y=264.00 and he is still at exactly 264.00 forty-five frames later; Enter resumes.",
+          "riff": "Pausing mid-air is the honest test: the jump has to survive being interrupted without handing back a free one."
+        }
+      ]
+    },
+    {
+      "id": "manual-restart",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "controls",
+          "beat_id": "B08",
+          "start_s": 5.2,
+          "action_s": 5.6,
+          "end_s": 6.6,
+          "observation": "R restarts the attempt from x=278.2 back to x=64.0 with the retry counter unchanged at 0.",
+          "riff": "A manual restart is not a death, which is why the counter does not move when you press R."
+        }
+      ]
+    },
+    {
+      "id": "main-menu",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "controls",
+          "beat_id": "B08",
+          "start_s": 6.6,
+          "action_s": 7.03,
+          "end_s": 8.4,
+          "observation": "Escape then M returns to the main menu state from a paused attempt.",
+          "riff": "The pause card is the only place M appears, and it is the way back out of a run."
+        }
+      ]
+    },
+    {
+      "id": "completion-replay",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "replay",
+          "beat_id": "B09",
+          "start_s": 12.9,
+          "action_s": 13.37,
+          "end_s": 16.2,
+          "observation": "Enter on the completion card starts a fresh attempt with deaths=0 and jumps=0.",
+          "riff": "Replay resets the counters, so a second run is a clean measurement rather than a continuation."
+        }
+      ]
+    },
+    {
+      "id": "hud-progress",
+      "status": "implemented",
+      "evidence": [
+        {
+          "capture": "high-road",
+          "beat_id": "B03",
+          "start_s": 6.0,
+          "action_s": 8.7,
+          "end_s": 11.0,
+          "observation": "The progress bar advances across the new section and is not full until the relocated flag.",
+          "riff": "The bar used to divide by a hard-coded 852 and read 100% at 48% of the course; it now scales to the real finish."
+        }
+      ]
+    },
+    {
+      "id": "cherries",
+      "status": "planned",
+      "reason": "The GDD proposes twenty optional cherries. Not built in the starter slice and not added here.",
+      "evidence": []
+    },
+    {
+      "id": "three-zone-course",
+      "status": "planned",
+      "reason": "The GDD proposes a full three-zone course. This build is the starter's control/retry slice plus one added section, not the full course.",
+      "evidence": []
+    },
+    {
+      "id": "settings-screen",
+      "status": "planned",
+      "reason": "The GDD proposes a settings screen. Not built; there is nothing to configure in this build.",
+      "evidence": []
+    },
+    {
+      "id": "audio",
+      "status": "planned",
+      "reason": "No sound is implemented in this build. The film adds no fabricated game audio and states the game is silent.",
+      "evidence": []
+    },
+    {
+      "id": "web-export",
+      "status": "planned",
+      "reason": "The GDD proposes a locally tested Web export. Not built; this is a source release run from the editor or the launcher.",
+      "evidence": []
+    }
+  ]
+}

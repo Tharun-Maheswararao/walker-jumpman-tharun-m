@@ -126,17 +126,28 @@ rather than minimising it. A fuller account with specifics is in FRICTIONAL.md.
   AI's predictions and found the "R: retry" labelling defect, which drove a
   source change.
 * **No second playtester.** None is claimed.
-* **The film is not rendered.** `film/` holds the plan, not the product.
+* **The film is rendered** by the AI using the course-provided Brutalist
+  toolkit the human supplied. Narration is AI text-to-speech (Liam, local
+  Kokoro `am_onyx`), disclosed in the film's own credits.
 
 ### Narration and film
 
-The film's narration script is AI-drafted (`film/SCRIPT.md`). If AI
-text-to-speech (Liam / Kokoro `am_onyx`, via the Brutalist workflow) is used for
-the voice track, that is permitted by the assignment and will be stated in the
-film's own credits and in SUBMISSION.md. No gameplay footage will be
-reconstructed, re-enacted or faked; every gameplay frame comes from the real
-engine running the committed source, and any held frame, scripted-input capture
-or diagram will be labelled as such on screen.
+The film's narration script is AI-drafted (`film/SCRIPT.md`) and voiced by AI
+text-to-speech (Liam, local Kokoro `am_onyx`, free and offline), which the
+assignment permits and which the film's own credits state.
+
+No gameplay footage is reconstructed, re-enacted or faked. Every gameplay frame
+is the real engine running the committed source at revision `3aa05bb`, captured
+through the real `Input` path with no teleports, no state writes and no disabled
+collision checks. Scripted-input captures, held frames, and the one deliberately
+reconstructed before-frame in the cause-and-effect beat are each labelled on
+screen. The game is silent and no game audio was fabricated.
+
+Additional tools used for the film: the course-provided
+[nikbearbrown/brutalist.art](https://github.com/nikbearbrown/brutalist.art)
+toolkit (Kokoro TTS, Remotion, Manim), ffmpeg 9.0.2, Node 20.19.5, and a
+Python 3.12 virtualenv created because the toolkit's `manim` pin excludes the
+machine's Python 3.13.
 
 ## 5. Collaborators
 
