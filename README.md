@@ -2,6 +2,7 @@
 
 **CSYE 7270 · Fall 2026 · Assignment 1 — Extend Walker Jumpman**
 **Tharun Maheswararao** · `maheswararao.t@northeastern.edu`
+**Repository:** <https://github.com/Tharun-Maheswararao/walker-jumpman-tharun-m>
 
 An extension of the course starter: a new main character, **SPROCKET** the
 wind-up tin automaton, and a new playable section, **03 / THE FORK**, which

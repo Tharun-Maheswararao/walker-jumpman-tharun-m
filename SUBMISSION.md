@@ -10,8 +10,8 @@
 
 | Field | Value |
 | --- | --- |
-| **GitHub repository/folder URL** | ⬜ *fill in after pushing* |
-| **Submitted commit SHA** | ⬜ *fill in — this is the final commit, and by definition cannot be written inside itself. Put the real SHA in the Canvas note.* |
+| **GitHub repository/folder URL** | <https://github.com/Tharun-Maheswararao/walker-jumpman-tharun-m> |
+| **Submitted commit SHA** | See the Canvas note. A commit's own SHA cannot be written inside itself; the Canvas note carries the final one. |
 | **Game-source revision to be shown in the film** | `5bdd71e` — *Correct a stale course width in the route-budget comment*. This is the **final game-source revision**; every commit after it is documentation only and must not touch `godot/`. |
 | **Godot version** | `4.7.2.stable.official.ed1daf0bf` |
 | **Operating system** | macOS 15.6 (Darwin 24.6.0), Apple M4 |
@@ -139,7 +139,7 @@ Full detail in [SOURCES.md](SOURCES.md) §4 and [FRICTIONAL.md](FRICTIONAL.md).
 ## Reviewer checklist
 
 ```bash
-git clone <repo-url> && cd walker-jumpman-tharun-m
+git clone https://github.com/Tharun-Maheswararao/walker-jumpman-tharun-m.git && cd walker-jumpman-tharun-m
 godot --path godot                                                      # play it
 godot --headless --path godot --script res://tests/test_game.gd         # 25 / 0
 godot --headless --path godot --script res://tests/test_keyboard.gd     #  9 / 0
