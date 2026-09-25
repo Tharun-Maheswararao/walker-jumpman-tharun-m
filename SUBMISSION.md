@@ -15,7 +15,7 @@
 | **Game-source revision to be shown in the film** | `5bdd71e` — *Correct a stale course width in the route-budget comment*. This is the **final game-source revision**; every commit after it is documentation only and must not touch `godot/`. |
 | **Godot version** | `4.7.2.stable.official.ed1daf0bf` |
 | **Operating system** | macOS 15.6 (Darwin 24.6.0), Apple M4 |
-| **Final film URL** | ⬜ *upload `exports/landscape/…mp4` to course media storage, then paste the link* |
+| **Final film URL** | <https://drive.google.com/file/d/1zdl23QL100QzlWFBuYtc76-CeBIeO9Gm/view?usp=sharing> (Google Drive) |
 | **Final film filename** | `claude-liam-walker-jumpman-tharun-m-walkthrough.mp4` |
 | **Final film SHA-256** | `3a91091eefa6065949d43d4b310944b48431f01cdac1813d4855a4432e97a8a5` |
 
@@ -116,8 +116,12 @@ teleports, no state writes, no disabled collision checks. Scripted-input
 captures, held frames and the one deliberately reconstructed before-frame are
 each labelled on screen. The game is silent; no game audio was fabricated.
 
-**The MP4 is excluded from git by size.** Upload it to the designated course
-media storage and paste the link into the table above and in the Canvas note.
+**The MP4 is excluded from git by size.** It is hosted at:
+
+<https://drive.google.com/file/d/1zdl23QL100QzlWFBuYtc76-CeBIeO9Gm/view?usp=sharing>
+
+Interim location pending confirmation of the course's designated media
+storage.
 
 Verify the checksum with:
 

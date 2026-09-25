@@ -217,7 +217,7 @@ at native 4K with local Kokoro narration (Liam, `am_onyx`).
 | Format | 3840×2160, H.264, 30 fps, AAC 48 kHz stereo |
 | Game-source revision shown | `3aa05bb` |
 | SHA-256 | `3a91091eefa6065949d43d4b310944b48431f01cdac1813d4855a4432e97a8a5` |
-| Final film URL | *upload to course media storage, then link here* |
+| Final film URL | <https://drive.google.com/file/d/1zdl23QL100QzlWFBuYtc76-CeBIeO9Gm/view?usp=sharing> |
 
 The reel folder `youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/`
 holds the beat sheet, narration, `coverage.json`, the capture input logs, the
