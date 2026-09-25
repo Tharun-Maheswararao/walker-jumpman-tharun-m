@@ -400,7 +400,7 @@ did not just find a bug, it explained a design property back to me.
 ## 13. The film, and three gates that were right
 
 The walkthrough rendered at 3840×2160, 3:47, thirteen beats, with local Kokoro
-narration. `./art final` refused it three times first, and each refusal was
+narration. (It later became 4:10 — see §14.) `./art final` refused it three times first, and each refusal was
 correct.
 
 **GATE T said my level's signage was too small.** A 36px text run against a

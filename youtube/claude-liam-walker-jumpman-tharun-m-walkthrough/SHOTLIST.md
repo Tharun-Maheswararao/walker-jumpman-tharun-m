@@ -1,6 +1,8 @@
 # SHOTLIST.md — Walker Jumpman, Extended
 
-Revision demonstrated: `3aa05bb` · 13 beats · 3:47 · landscape 3840×2160 @30fps
+Revision demonstrated: `3aa05bb` · 13 beats · 4:10 (250.1s) · landscape 3840×2160 @30fps
+
+Durations below are the **as-built** `render_duration_s` from `beat_sheet.json`, not plan estimates.
 
 | # | Act | Source | What is on screen | Label |
 |---|---|---|---|---|
@@ -15,7 +17,7 @@ Revision demonstrated: `3aa05bb` · 13 beats · 3:47 · landscape 3840×2160 @30
 | B08 | MECHANISM | `controls` 0.00–8.53 + 125f hold | Title card, Enter, pause mid-jump, resume, R, M | SCRIPTED INPUT · HELD FRAME |
 | B09 | FALSIFIABILITY | `replay` 8.00–16.40 + 52f hold | Completion card, Enter, counters reset | SCRIPTED INPUT · HELD FRAME |
 | B10 | VERDICT | Remotion `ClaudeVerdictArtifact` | Observed working / uncertain / not built | — |
-| B11 | YOUR TURN | Remotion `ClaudeComposerAsk` | One concrete experiment; Liam signs off | — |
+| B11 | YOUR TURN | Remotion `ClaudeComposerAsk` | One concrete experiment, then the human/AI credits and the revision demonstrated; Liam signs off | — |
 | B12 | OUTRO | Remotion `ClaudeTitleOutro` | Title restate, @NikBearBrown, mascot | — |
 
 ## Cutting rules applied
@@ -30,3 +32,22 @@ Revision demonstrated: `3aa05bb` · 13 beats · 3:47 · landscape 3840×2160 @30
 4. **`render_duration_s` equals the media clip's frame count / 30** for every
    beat, so no beat is retimed by the compiler. Frame counts were verified with
    `ffprobe -count_frames` after assembly.
+
+## As-built durations
+
+| Beat | Seconds | Frames @30 |
+| --- | ---: | ---: |
+| B00 | 18.87 | 566 |
+| B01 | 31.07 | 932 |
+| B02 | 11.57 | 347 |
+| B03 | 9.70 | 291 |
+| B04 | 15.53 | 466 |
+| B05 | 8.70 | 261 |
+| B06 | 12.40 | 372 |
+| B07 | 32.97 | 989 |
+| B08 | 11.23 | 337 |
+| B09 | 10.13 | 304 |
+| B10 | 32.70 | 981 |
+| B11 | 51.47 | 1544 |
+| B12 | 3.80 | 114 |
+| **Total** | **250.1** | **7504** |
