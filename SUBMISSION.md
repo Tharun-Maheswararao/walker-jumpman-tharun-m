@@ -129,6 +129,18 @@ Verify the checksum with:
 shasum -a 256 youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/exports/landscape/claude-liam-walker-jumpman-tharun-m-walkthrough.mp4
 ```
 
+## Reviewer access — tested
+
+| What | How it was tested | Result |
+| --- | --- | --- |
+| **Film** | Drive link opened in a private/incognito window, signed out of Google | **Opens and plays** (2026-09-24) |
+| **Repository** | Cloned back from `github.com` into a clean directory, then all three suites run and the game booted from that clone | **57/57 checks, 0 failures, boots clean** |
+| **Source ZIP** | Built with `git archive` from the submitted commit, so it contains exactly the tracked files at that revision and cannot include ignored caches, credentials or media | 142 files, 2.7 MB, 0 media/credential entries |
+
+An earlier automated fetch of the Drive link returned a Google sign-in page.
+That was a false alarm: Drive serves sign-in to non-browser clients even for
+link-shared files. The incognito browser test above is the authoritative one.
+
 ## Contributions
 
 * **Human (Tharun Maheswararao):** direction and scope; chose the character
