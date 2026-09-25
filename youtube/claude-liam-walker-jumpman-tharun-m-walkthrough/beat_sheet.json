@@ -32,7 +32,7 @@
     "student": "Tharun Maheswararao",
     "course": "CSYE 7270 Fall 2026 · Assignment 1",
     "build": {
-      "at": "2026-09-24T21:55:52",
+      "at": "2026-09-24T22:15:24",
       "cut": "master",
       "filled": 13,
       "of": 13,
@@ -88,7 +88,7 @@
         "status": "VIDEO",
         "src": "media/B00.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       }
     },
     {
@@ -132,7 +132,7 @@
         "status": "VIDEO",
         "src": "media/B01.mp4",
         "filled_by": "remotion:BrutalistHesitantWriter",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       }
     },
     {
@@ -163,7 +163,7 @@
         "status": "VIDEO",
         "src": "media/B02.mp4",
         "filled_by": "media",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       },
       "qc": {
         "contrast_regions": [
@@ -217,7 +217,7 @@
         "status": "VIDEO",
         "src": "media/B03.mp4",
         "filled_by": "media",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       },
       "qc": {
         "contrast_regions": [
@@ -271,7 +271,7 @@
         "status": "VIDEO",
         "src": "media/B04.mp4",
         "filled_by": "media",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       },
       "qc": {
         "contrast_regions": [
@@ -325,7 +325,7 @@
         "status": "VIDEO",
         "src": "media/B05.mp4",
         "filled_by": "media",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       },
       "qc": {
         "contrast_regions": [
@@ -379,7 +379,7 @@
         "status": "VIDEO",
         "src": "media/B06.mp4",
         "filled_by": "media",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       },
       "qc": {
         "contrast_regions": [
@@ -437,7 +437,7 @@
         "status": "VIDEO",
         "src": "media/B07.mp4",
         "filled_by": "media",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       }
     },
     {
@@ -468,7 +468,7 @@
         "status": "VIDEO",
         "src": "media/B08.mp4",
         "filled_by": "media",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       },
       "qc": {
         "contrast_regions": [
@@ -522,7 +522,7 @@
         "status": "VIDEO",
         "src": "media/B09.mp4",
         "filled_by": "media",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       },
       "qc": {
         "contrast_regions": [
@@ -598,14 +598,14 @@
         "status": "VIDEO",
         "src": "media/B10.mp4",
         "filled_by": "remotion:ClaudeVerdictArtifact",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       }
     },
     {
       "beat_id": "B11",
       "act": "YOUR_TURN",
-      "role_note": "YOUR TURN — one concrete experiment. Liam signs off here.",
-      "narration_text": "Your turn. The next improvement is the limitation I can name most precisely. That painted launch guide is positioned by hand. Move the terrace and forget to move the paint, and the picture disagrees with the physics again, which is exactly the bug this build fixed everywhere else. So compute the guide from the measured take-off window at load time, the way the spikes already derive their shape. Then play it, take the low road first, and tell me whether doubling back reads as a decision or just as getting lost. Liam, in for Bear.",
+      "role_note": "YOUR TURN — one concrete experiment, then the credits the assignment requires: human vs AI contribution and the revision demonstrated. Liam signs off here, before the locked outro card.",
+      "narration_text": "Your turn. The next improvement is the limitation I can name most precisely. That painted launch guide is positioned by hand. Move the terrace and forget to move the paint, and the picture disagrees with the physics again, which is exactly the bug this build fixed everywhere else. So compute the guide from the measured take-off window at load time, the way the spikes already derive their shape. Then play it, take the low road first, and tell me whether doubling back reads as a decision or just as getting lost. Credits, plainly. This is Tharun Maheswararao's extension of Bear's walker jumpman starter, at revision three a a zero five b b. Tharun set the direction, chose the character, played it, and owns this submission. Claude Code wrote effectively all of the GDScript, the tests and the tooling, and drafted this script. This voice is Kokoro text to speech. All the art is original vector drawing, nothing imported. Liam, in for Bear.",
       "shot": {
         "type": "GRAPHIC",
         "source": "remotion",
@@ -620,35 +620,39 @@
           "pattern": "ClaudeComposerAsk",
           "props": {
             "greeting": "Your turn",
-            "topic": "WALKER · YOUR TURN",
+            "topic": "WALKER · YOUR TURN + CREDITS",
             "segment": "one concrete experiment",
             "command": "Derive the launch-guide band from the measured take-off window at load time, so the paint and the physics cannot disagree.",
             "runningText": "over to you…",
             "output": [
               "■ why this one",
               "  the guide is the last hand-placed number in the level",
-              "  every other marker is derived from level data",
-              "  hazard_triangle() already proves the pattern works"
+              "  hazard_triangle() already proves the pattern works",
+              "■ credits  ·  revision 3aa05bb",
+              "  HUMAN  Tharun Maheswararao — direction, concept, playtest",
+              "  AI     Claude Code — GDScript, tests, tooling, this script",
+              "  VOICE  Liam — Kokoro am_onyx, AI text-to-speech",
+              "  ART    original vector drawing; nothing imported"
             ]
           },
           "rendered": {
             "out": "media/B11.mp4",
-            "at": "2026-09-25T00:20:04.195822+00:00"
+            "at": "2026-09-25T02:11:32.497072+00:00"
           }
         }
       },
       "estimated_duration_s": 34,
       "engine": "kokoro",
       "voice": "am_onyx",
-      "actual_duration_s": 28.92,
-      "audio_file": "mp3/beat-B11.mp3",
-      "render_duration_s": 28.933333333333334,
       "build": {
         "status": "VIDEO",
         "src": "media/B11.mp4",
         "filled_by": "remotion:ClaudeComposerAsk",
-        "at": "2026-09-24T21:55:52"
-      }
+        "at": "2026-09-24T22:15:24"
+      },
+      "actual_duration_s": 51.44,
+      "audio_file": "mp3/beat-B11.mp3",
+      "render_duration_s": 51.46666666666667
     },
     {
       "beat_id": "B12",
@@ -687,7 +691,7 @@
         "status": "VIDEO",
         "src": "media/B12.mp4",
         "filled_by": "remotion:ClaudeTitleOutro",
-        "at": "2026-09-24T21:55:52"
+        "at": "2026-09-24T22:15:24"
       }
     }
   ]

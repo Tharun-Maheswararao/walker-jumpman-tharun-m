@@ -8,7 +8,7 @@ quality checks
 runtime to fill.
 **Game-source revision to demonstrate:** `5bdd71e` (the final game-source revision; later commits are documentation only)
 
-> **Status: RENDERED.** 3840×2160, 3:47, 13 beats. The authoritative, as-built
+> **Status: RENDERED.** 3840×2160, 4:10, 13 beats. The authoritative, as-built
 > beat sheet is `youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/beat_sheet.json`,
 > with the as-built shot list in that folder's `SHOTLIST.md`. This document is
 > the plan it was built from; where the two differ, the reel folder is correct.
@@ -59,7 +59,7 @@ These are constraints on the edit, not decoration.
 | 7 | The fork, both roads | 0:30 | High road to the flag; then low road under the terrace, buttress, doubling back. Tick counters as a lower third | `SCRIPTED INPUT` if the timed comparison uses the fixtures |
 | 8 | Completion | 0:10 | Reaching the flag, completion card, Enter to replay | — |
 | 9 | **Verdict** | 0:25 | Test totals; the refuted bonk prediction and the single-playtester bias stated plainly | — |
-| 10 | **Your Turn** | 0:15 | The fork decision frame, held | `HELD FRAME` |
+| 11 | **Your Turn + credits** | 0:51 | One concrete experiment, then the human/AI credits and the revision demonstrated | — |
 | 11 | Walker summary + outro | ~0:15 | Skill template + credits card | — |
 
 ## Beat 6 in detail — the required cause-and-effect

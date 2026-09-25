@@ -17,7 +17,7 @@
 | **Operating system** | macOS 15.6 (Darwin 24.6.0), Apple M4 |
 | **Final film URL** | ⬜ *upload `exports/landscape/…mp4` to course media storage, then paste the link* |
 | **Final film filename** | `claude-liam-walker-jumpman-tharun-m-walkthrough.mp4` |
-| **Final film SHA-256** | `f612fd0e77035836a25f762d415ae2c6895b69b5651fd4f4be2d67a530689ea8` |
+| **Final film SHA-256** | `3a91091eefa6065949d43d4b310944b48431f01cdac1813d4855a4432e97a8a5` |
 
 **Revision relationship.** The film demonstrates game source `5bdd71e`. Any
 commits after it add film documentation only and **do not change the
@@ -97,9 +97,9 @@ against arithmetic.
 | Field | Value |
 | --- | --- |
 | Path | `youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/exports/landscape/claude-liam-walker-jumpman-tharun-m-walkthrough.mp4` |
-| Duration | 3:47 (227.6 s) · 13 beats |
+| Duration | 4:10 (250.1 s) · 13 beats |
 | Format | 3840×2160 H.264, 30 fps, AAC 48 kHz stereo, mean −27.0 dB |
-| SHA-256 | `f612fd0e77035836a25f762d415ae2c6895b69b5651fd4f4be2d67a530689ea8` |
+| SHA-256 | `3a91091eefa6065949d43d4b310944b48431f01cdac1813d4855a4432e97a8a5` |
 | Narration | Liam, local Kokoro `am_onyx` (free, no key) |
 | Game-source revision shown | `3aa05bb` |
 

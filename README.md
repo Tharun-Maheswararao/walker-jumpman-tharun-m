@@ -212,10 +212,10 @@ at native 4K with local Kokoro narration (Liam, `am_onyx`).
 | Field | Value |
 | --- | --- |
 | Filename | `claude-liam-walker-jumpman-tharun-m-walkthrough.mp4` |
-| Duration | 3:47 (227.6 s) |
+| Duration | 4:10 (250.1 s) |
 | Format | 3840×2160, H.264, 30 fps, AAC 48 kHz stereo |
 | Game-source revision shown | `3aa05bb` |
-| SHA-256 | `f612fd0e77035836a25f762d415ae2c6895b69b5651fd4f4be2d67a530689ea8` |
+| SHA-256 | `3a91091eefa6065949d43d4b310944b48431f01cdac1813d4855a4432e97a8a5` |
 | Final film URL | *upload to course media storage, then link here* |
 
 The reel folder `youtube/claude-liam-walker-jumpman-tharun-m-walkthrough/`

@@ -439,3 +439,37 @@ Both fixed so the footage fails the way the narration says it does.
 **Human/AI split.** The AI built the pipeline, drove the captures, authored the
 beat sheet and coverage contract, and diagnosed all three gates. I supplied the
 toolkit, and I own every claim the film makes.
+
+## 14. The film shipped without saying who made it
+
+**What happened.** After the render was finished and verified, Tharun asked a
+simple question: why does the last card say `@NikBearBrown`?
+
+The direct answer is that it is not a choice. `OUTRO-LOCK.md` in the course
+toolkit specifies the handle as **hardcoded** — "never derived from a persona /
+skin / channel variable. It is the one channel" — and the `godot-waikthrough`
+skill orders walker mode to obey that lock. Every `claude-liam-*` Brutalist reel
+ends on that card. It is the toolkit's channel branding, not a claim about
+authorship.
+
+**But checking it found a real defect.** Grepping the delivered narration for
+any attribution returned **zero** matches. The assignment requires the film to
+"identify human and AI contributions and the game revision being demonstrated."
+The revision was on screen in two places; the human/AI split was nowhere. I had
+planned an attribution card in `film/BEAT-SHEET.md` and then silently dropped it
+when I authored the actual beat sheet.
+
+**Response.** The outro card is locked and cannot carry it, so the credits went
+into **Your Turn**, which is where the skill says Liam signs off before the
+final card: four on-screen lines naming the human, the AI, the AI voice and the
+art provenance, plus the revision, and the same read aloud. B11 went from 28.9s
+to 51.4s and the film from 3:47 to 4:10. Gates re-run: GATE T PASS, GATE V 0/0.
+
+**What I learned.** I verified the film against every machine gate the toolkit
+has, and all of them passed while the film was missing an explicit assignment
+requirement. The gates check what they were built to check. Nothing in that
+pipeline was ever going to ask "does this say who made it?" — and I stopped
+looking once the gates were green.
+
+**Human/AI split on this entry.** Tharun asked the question that found it. I
+diagnosed it and made the fix.
